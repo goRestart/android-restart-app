@@ -12,10 +12,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         bottom_navigation_bar.configure(
-                arrayOf(
-                        ImageNavigationItem(this, R.drawable.abc_btn_check_material),
-                        ImageNavigationItem(this, R.drawable.abc_btn_check_material),
-                        ImageNavigationItem(this, R.drawable.abc_btn_check_material)
-                ))
+            arrayOf(
+                ImageNavigationItem(this, R.drawable.bottom_navigation_icon),
+                ImageNavigationItem(this, R.drawable.bottom_navigation_icon),
+                ImageNavigationItem(this, R.drawable.bottom_navigation_icon),
+                ImageNavigationItem(this, R.drawable.bottom_navigation_icon),
+                ImageNavigationItem(this, R.drawable.bottom_navigation_icon)
+            ))
     }
 }

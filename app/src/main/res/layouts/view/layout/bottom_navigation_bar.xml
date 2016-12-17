@@ -9,10 +9,11 @@
 
     <LinearLayout
         android:id="@+id/container"
-        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="@dimen/bottom_navigation_bar_height"
-        android:background="@color/colorAccent">
+        android:background="@android:color/white"
+        android:clickable="true"
+        android:orientation="horizontal">
     </LinearLayout>
 
 </merge>
