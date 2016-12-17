@@ -11,6 +11,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        supportActionBar?.setDisplayShowHomeEnabled(true)
         bottom_navigation_bar.configure(
             arrayOf(
                 ImageNavigationItem(this, R.drawable.bottom_navigation_icon),

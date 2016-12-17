@@ -2,6 +2,7 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     
+    <dimen name="fragment_container_margin_bottom">-4dp</dimen> <!-- negative bottom_navigation_bar_shadow_height -->
     <dimen name="bottom_navigation_bar_shadow_height">4dp</dimen>
     <dimen name="bottom_navigation_bar_height">56dp</dimen>
 </resources>

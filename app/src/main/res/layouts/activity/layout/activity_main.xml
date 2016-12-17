@@ -2,8 +2,26 @@
 <RelativeLayout
     android:id="@+id/activity_main"
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/ivory"
+        app:logo="@drawable/ic_account_circle_black_24dp"
+        />
+
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar"
+        android:layout_above="@+id/bottom_navigation_bar"
+        android:layout_marginBottom="@dimen/fragment_container_margin_bottom"
+        />
 
     <com.restart.restart.ui.view.bottomnavigation.BottomNavigationBar
         android:id="@+id/bottom_navigation_bar"
