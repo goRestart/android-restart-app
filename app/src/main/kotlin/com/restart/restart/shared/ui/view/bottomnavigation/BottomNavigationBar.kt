@@ -1,4 +1,4 @@
-package com.restart.restart.ui.view.bottomnavigation
+package com.restart.restart.shared.ui.view.bottomnavigation
 
 import android.content.Context
 import android.util.AttributeSet
@@ -14,6 +14,9 @@ import kotlinx.android.synthetic.main.bottom_navigation_bar.view.*
 
 class BottomNavigationBar : LinearLayout {
 
+    private var items: Array<NavigationItem> = emptyArray()
+    var onNavigationItemSelected: ((Int) -> Unit)? = null
+
     constructor(context: Context) : super(context)
     constructor(context: Context, attrs: AttributeSet) : super(context, attrs)
     constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int) : super(context, attrs, defStyleAttr)
@@ -24,6 +27,7 @@ class BottomNavigationBar : LinearLayout {
     }
 
     fun configure(items: Array<NavigationItem>) {
+        this.items = items
         val containerViews = items
             .map { applyItemLayoutParams(it.getView()) }
             .map { createContainerView(it) }
@@ -33,6 +37,10 @@ class BottomNavigationBar : LinearLayout {
         }
 
         containerViews.forEach { container.addView(it) }
+    }
+
+    fun select(index: Int) {
+        items[index].select()
     }
 
     private fun applyItemLayoutParams(view: View): View {
@@ -56,6 +64,7 @@ class BottomNavigationBar : LinearLayout {
             items.filter { it != item }
                 .forEach { it.deselect() }
             item.select()
+            onNavigationItemSelected?.invoke(items.indexOf(item))
         }
     }
 }
