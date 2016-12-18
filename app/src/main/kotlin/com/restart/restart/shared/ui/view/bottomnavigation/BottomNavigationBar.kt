@@ -14,7 +14,8 @@ import kotlinx.android.synthetic.main.bottom_navigation_bar.view.*
 
 class BottomNavigationBar : LinearLayout {
 
-    private var items: Array<NavigationItem> = emptyArray()
+    private var items: List<NavigationItem> = emptyList()
+    var currentSelectedItem: Int = 0
     var onNavigationItemSelected: ((Int) -> Unit)? = null
 
     constructor(context: Context) : super(context)
@@ -26,7 +27,7 @@ class BottomNavigationBar : LinearLayout {
         orientation = LinearLayout.VERTICAL
     }
 
-    fun configure(items: Array<NavigationItem>) {
+    fun configure(items: List<NavigationItem>) {
         this.items = items
         val containerViews = items
             .map { applyItemLayoutParams(it.getView()) }
@@ -40,6 +41,7 @@ class BottomNavigationBar : LinearLayout {
     }
 
     fun select(index: Int) {
+        currentSelectedItem = index
         items[index].select()
     }
 
@@ -59,7 +61,7 @@ class BottomNavigationBar : LinearLayout {
         return containerView
     }
 
-    private fun setOnClickListener(items: Array<NavigationItem>, item: NavigationItem, view: View) {
+    private fun setOnClickListener(items: List<NavigationItem>, item: NavigationItem, view: View) {
         view.setOnClickListener {
             items.filter { it != item }
                 .forEach { it.deselect() }

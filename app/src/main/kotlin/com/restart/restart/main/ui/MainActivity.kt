@@ -11,34 +11,48 @@ import com.restart.restart.profile.ui.ProfileFragment
 import com.restart.restart.shared.ui.view.bottomnavigation.ImageNavigationItem
 import kotlinx.android.synthetic.main.main.*
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), MainPresenter.View {
+    var presenter: MainPresenter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main)
-        supportActionBar?.setDisplayShowHomeEnabled(true)
-        bottom_navigation_bar.configure(
-            arrayOf(
-                ImageNavigationItem(this, R.drawable.bottom_navigation_icon),
-                ImageNavigationItem(this, R.drawable.bottom_navigation_icon),
-                ImageNavigationItem(this, R.drawable.bottom_navigation_icon),
-                ImageNavigationItem(this, R.drawable.bottom_navigation_icon),
-                ImageNavigationItem(this, R.drawable.bottom_navigation_icon)
-            ))
 
-        bottom_navigation_bar.select(0)
-        val fragment = ListingFragment()
+        presenter = MainPresenter(this)
+        presenter?.onStart()
+
+        bottom_navigation_bar.onNavigationItemSelected = { onFragmentSelected(it) }
+    }
+
+    override fun addNavigationItems(icons: List<Int>) {
+        val navigationItems = icons.map { ImageNavigationItem(this, it) }
+        bottom_navigation_bar.configure(navigationItems)
+    }
+
+    override fun moveToFragment(index: Int) {
+        val fragment = fragmentByIndex(index) ?: return
+
+        if (fragment_container.childCount == 0) {
+            setFragment(fragment)
+        } else {
+            moveToFragment(fragment)
+        }
+
+        bottom_navigation_bar.select(index)
+    }
+
+    private fun onFragmentSelected(index: Int) {
+        presenter?.onItemSelected(index)
+    }
+
+    private fun setFragment(fragment: Fragment) {
         supportFragmentManager
             .beginTransaction()
             .add(R.id.fragment_container, fragment)
             .commit()
-
-        bottom_navigation_bar.onNavigationItemSelected = { selectFragment(it) }
     }
 
-    private fun selectFragment(index: Int) {
-        val fragment = fragmentByIndex(index) ?: return
-
+    private fun moveToFragment(fragment: Fragment) {
         supportFragmentManager
             .beginTransaction()
             .setCustomAnimations(R.anim.fragment_fade_in, R.anim.fragment_fade_out)
@@ -55,6 +69,4 @@ class MainActivity : AppCompatActivity() {
             4 -> ProfileFragment()
             else -> null
         }
-
-
 }
