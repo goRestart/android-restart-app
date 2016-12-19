@@ -7,4 +7,22 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="Title">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textSize">@dimen/title</item>
+        <item name="android:textColor">@color/ebony</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Subtitle">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textSize">@dimen/subtitle</item>
+        <item name="android:textColor">@color/ebony</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Distance" parent="Subtitle">
+        <item name="android:textColor">@color/violet</item>
+    </style>
+
 </resources>
