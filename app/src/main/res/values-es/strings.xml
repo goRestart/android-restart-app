@@ -4,4 +4,5 @@
     <string name="listing_title_cell">¿Qué buscas?</string>
     <string name="listing_query_hint">Pokemon sol, Battlefield 1…</string>
     <string name="listing_distance_cell">A %1$s de ti</string>
+    <string name="listing_filter_cell">FILTROS</string>
 </resources>

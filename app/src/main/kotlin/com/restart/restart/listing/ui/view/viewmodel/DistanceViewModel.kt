@@ -27,7 +27,5 @@ class DistanceViewModel : EpoxyModel<TextView>() {
         view.text = text
     }
 
-    override fun getSpanSize(totalSpanCount: Int, position: Int, itemCount: Int): Int {
-        return 1
-    }
+    override fun getSpanSize(totalSpanCount: Int, position: Int, itemCount: Int): Int = 3
 }
