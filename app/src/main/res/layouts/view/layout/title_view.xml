@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/listing_title_cell_height"
+    android:layout_marginLeft="@dimen/listing_title_cell_left_margin"
+    android:layout_marginStart="@dimen/listing_title_cell_left_margin"
+    android:layout_marginTop="@dimen/listing_title_cell_top_margin">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:fontFamily="sans-serif"
+        android:text="@string/listing_title_cell"
+        android:textColor="@color/ebony"
+        android:textSize="@dimen/title"
+        android:textStyle="bold"/>
+
+</FrameLayout>

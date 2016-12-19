@@ -12,6 +12,7 @@ import com.restart.restart.shared.ui.view.bottomnavigation.ImageNavigationItem
 import kotlinx.android.synthetic.main.main.*
 
 class MainActivity : AppCompatActivity(), MainPresenter.View {
+
     var presenter: MainPresenter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {

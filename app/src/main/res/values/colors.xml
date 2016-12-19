@@ -4,8 +4,6 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
 
-    <color name="ivory">#FFFFFF</color>
-
-    <color name="bottom_navigation_bar_shadow_top">#00000000</color>
-    <color name="bottom_navigation_bar_shadow_bottom">#20000000</color>
+    <color name="bottom_navigation_bar_shadow_top">@color/ivory</color>
+    <color name="bottom_navigation_bar_shadow_bottom">#26000000</color>
 </resources>
