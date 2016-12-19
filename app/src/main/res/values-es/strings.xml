@@ -2,4 +2,5 @@
 <resources>
     <string name="app_name">Restart</string>
     <string name="listing_title_cell">¿Qué buscas?</string>
+    <string name="listing_query_hint">Pokemon sol, Battlefield 1…</string>
 </resources>
