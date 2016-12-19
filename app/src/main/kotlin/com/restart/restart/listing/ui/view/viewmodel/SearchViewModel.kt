@@ -1,9 +1,10 @@
 package com.restart.restart.listing.ui.view.viewmodel
 
-import android.view.View
-import com.airbnb.epoxy.EpoxyModel
+import com.airbnb.epoxy.SimpleEpoxyModel
 import com.restart.restart.R
+import com.restart.restart.listing.ui.view.ListingConfiguration
 
-class SearchViewModel : EpoxyModel<View>() {
-    override fun getDefaultLayout(): Int = R.layout.search_cell
+class SearchViewModel : SimpleEpoxyModel(R.layout.search_cell) {
+    override fun getSpanSize(totalSpanCount: Int, position: Int, itemCount: Int): Int =
+        ListingConfiguration.NUMBER_OF_COLUMNS
 }

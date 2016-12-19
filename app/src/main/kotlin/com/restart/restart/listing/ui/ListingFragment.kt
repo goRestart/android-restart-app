@@ -2,15 +2,15 @@ package com.restart.restart.listing.ui
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
-import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.GridLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.airbnb.epoxy.EpoxyAdapter
 import com.restart.restart.R
 import com.restart.restart.listing.ui.view.ListingAdapter
+import com.restart.restart.listing.ui.view.ListingConfiguration
 import kotlinx.android.synthetic.main.listing.*
-
 
 
 class ListingFragment : Fragment() {
@@ -24,8 +24,8 @@ class ListingFragment : Fragment() {
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val layoutManager = LinearLayoutManager(context)
-
+        val layoutManager = GridLayoutManager(context, ListingConfiguration.NUMBER_OF_COLUMNS)
+        layoutManager.spanSizeLookup = adapter.spanSizeLookup
         content.layoutManager = layoutManager
         content.adapter = adapter
 
