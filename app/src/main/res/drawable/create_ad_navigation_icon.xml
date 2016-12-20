@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape>
+            <size
+                android:width="@dimen/create_ad_navigation_icon_size"
+                android:height="@dimen/create_ad_navigation_icon_size"/>
+            <corners android:radius="@dimen/create_ad_navigation_icon_corner_radius"/>
+            <gradient
+                android:angle="-90"
+                android:endColor="@color/violet"
+                android:startColor="@color/light_violet"
+                android:type="linear"/>
+        </shape>
+    </item>
+    <item
+        android:drawable="@drawable/create_ad_navigation_icon_selected"
+        android:gravity="center"/>
+</layer-list>

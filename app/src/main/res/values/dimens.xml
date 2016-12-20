@@ -5,6 +5,10 @@
     <dimen name="fragment_container_margin_bottom">-4dp</dimen> <!-- negative bottom_navigation_bar_shadow_height -->
     <dimen name="bottom_navigation_bar_shadow_height">4dp</dimen>
     <dimen name="bottom_navigation_bar_height">56dp</dimen>
+    <dimen name="bottom_navigation_bar_padding_horizontal">10dp</dimen>
+
+    <dimen name="create_ad_navigation_icon_corner_radius">100dp</dimen>
+    <dimen name="create_ad_navigation_icon_size">48dp</dimen>
 
     <dimen name="listing_padding_horizontal">16dp</dimen>
 

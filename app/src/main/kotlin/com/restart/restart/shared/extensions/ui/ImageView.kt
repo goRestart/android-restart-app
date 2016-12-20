@@ -4,5 +4,5 @@ import android.support.annotation.DrawableRes
 import android.widget.ImageView
 
 fun ImageView.setImageDrawable(@DrawableRes drawableRes: Int) {
-    setImageDrawable(context.getDrawable(drawableRes))
+    setImageDrawable(context.resources.getDrawable(drawableRes))
 }

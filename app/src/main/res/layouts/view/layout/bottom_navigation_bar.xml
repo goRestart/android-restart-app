@@ -13,7 +13,11 @@
         android:layout_height="@dimen/bottom_navigation_bar_height"
         android:background="@android:color/white"
         android:clickable="true"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:paddingEnd="@dimen/bottom_navigation_bar_padding_horizontal"
+        android:paddingLeft="@dimen/bottom_navigation_bar_padding_horizontal"
+        android:paddingRight="@dimen/bottom_navigation_bar_padding_horizontal"
+        android:paddingStart="@dimen/bottom_navigation_bar_padding_horizontal">
     </LinearLayout>
 
 </merge>
