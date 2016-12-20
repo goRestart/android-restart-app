@@ -2,5 +2,7 @@
 <resources>
     <dimen name="title">28sp</dimen>
     <dimen name="subtitle">22sp</dimen>
+    <dimen name="header">16sp</dimen>
     <dimen name="small">12sp</dimen>
+    <dimen name="tiny">10sp</dimen>
 </resources>

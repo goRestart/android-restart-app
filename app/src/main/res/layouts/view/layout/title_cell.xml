@@ -4,7 +4,5 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="@dimen/listing_title_cell_height"
-    android:layout_marginLeft="@dimen/listing_cell_margin_horizontal"
-    android:layout_marginStart="@dimen/listing_cell_margin_horizontal"
     android:layout_marginTop="@dimen/listing_title_cell_margin_top"
     android:text="@string/listing_title_cell"/>

@@ -21,15 +21,33 @@
         <item name="android:textStyle">bold</item>
     </style>
 
+    <style name="Header">
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textSize">@dimen/header</item>
+        <item name="android:textColor">@color/ebony</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="Price" parent="Header">
+        <item name="android:textColor">@color/violet</item>
+    </style>
+
     <style name="Distance" parent="Subtitle">
         <item name="android:textColor">@color/violet</item>
     </style>
 
     <style name="Filter">
         <item name="android:textColor">@color/violet</item>
-        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
         <item name="android:textSize">@dimen/small</item>
         <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="Platform">
+        <item name="android:textColor">@color/rainy</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textSize">@dimen/tiny</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
 </resources>
