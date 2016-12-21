@@ -1,10 +1,21 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        maven { url "https://jitpack.io" }
+    }
+    dependencies {
+        classpath 'com.facebook.testing.screenshot:plugin:0.4.2'
+    }
+}
+
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'com.facebook.testing.screenshot'
 
 android {
     compileSdkVersion 25
-    buildToolsVersion "24.0.1"
+    buildToolsVersion "24.0.2"
     defaultConfig {
         applicationId "com.restart.restart"
         minSdkVersion 16
@@ -34,10 +45,18 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
+
+    // Compatibility
     compile 'com.android.support:design:25.1.0'
     compile 'com.android.support:appcompat-v7:25.1.0'
+
+    // User Interface
     compile 'com.airbnb.android:epoxy:1.5.0'
     compile 'com.squareup.picasso:picasso:2.5.2'
+
+    // Dependency Inversion
+    compile 'com.github.salomonbrys.kodein:kodein-android:3.1.0'
+
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 
     testCompile 'junit:junit:4.12'
