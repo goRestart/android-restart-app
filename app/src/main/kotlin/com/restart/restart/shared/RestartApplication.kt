@@ -1,16 +1,16 @@
 package com.restart.restart.shared
 
 import android.app.Application
-import com.squareup.picasso.Picasso
+import com.github.salomonbrys.kodein.Kodein
+import com.github.salomonbrys.kodein.KodeinAware
+import com.github.salomonbrys.kodein.android.activityScope
+import com.github.salomonbrys.kodein.lazy
 
-class RestartApplication : Application() {
+class RestartApplication : Application(), KodeinAware {
 
-    companion object {
-        var picasso: Picasso? = null
-    }
+    override val kodein by Kodein.lazy {}
 
     override fun onCreate() {
-        super.onCreate()
-        picasso = Picasso.with(this)
+        registerActivityLifecycleCallbacks(activityScope.lifecycleManager)
     }
 }

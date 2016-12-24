@@ -2,7 +2,9 @@ package com.restart.restart.main.ui
 
 import com.restart.restart.R
 
-class MainPresenter(val view: View) {
+class MainPresenter() {
+
+    var view: View? = null
 
     interface View {
         fun addNavigationItems(icons: List<Int>)
@@ -10,7 +12,7 @@ class MainPresenter(val view: View) {
     }
 
     fun onStart() {
-        view.addNavigationItems(
+        view?.addNavigationItems(
             listOf(
                 R.drawable.listing_navigation_icon,
                 R.drawable.favorites_navigation_icon,
@@ -19,10 +21,10 @@ class MainPresenter(val view: View) {
                 R.drawable.profile_navigation_icon
             )
         )
-        view.moveToFragment(0)
+        view?.moveToFragment(0)
     }
 
     fun onItemSelected(index: Int) {
-        view.moveToFragment(index)
+        view?.moveToFragment(index)
     }
 }

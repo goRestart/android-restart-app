@@ -3,6 +3,11 @@ package com.restart.restart.main.ui
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
+import com.github.salomonbrys.kodein.Kodein
+import com.github.salomonbrys.kodein.LazyKodeinAware
+import com.github.salomonbrys.kodein.android.appKodein
+import com.github.salomonbrys.kodein.instance
+import com.github.salomonbrys.kodein.lazy
 import com.restart.restart.R
 import com.restart.restart.favorites.ui.FavoritesFragment
 import com.restart.restart.listing.ui.ListingFragment
@@ -11,16 +16,21 @@ import com.restart.restart.profile.ui.ProfileFragment
 import com.restart.restart.shared.ui.view.bottomnavigation.ImageNavigationItem
 import kotlinx.android.synthetic.main.main.*
 
-class MainActivity : AppCompatActivity(), MainPresenter.View {
+class MainActivity : AppCompatActivity(), MainPresenter.View, LazyKodeinAware {
 
-    var presenter: MainPresenter? = null
+    override val kodein = Kodein.lazy {
+        extend(appKodein())
+        bind<MainPresenter>() with instance(MainPresenter())
+    }
+
+    val presenter: MainPresenter by instance()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main)
 
-        presenter = MainPresenter(this)
-        presenter?.onStart()
+        presenter.view = this
+        presenter.onStart()
 
         bottom_navigation_bar.onNavigationItemSelected = { onFragmentSelected(it) }
     }
@@ -43,7 +53,7 @@ class MainActivity : AppCompatActivity(), MainPresenter.View {
     }
 
     private fun onFragmentSelected(index: Int) {
-        presenter?.onItemSelected(index)
+        presenter.onItemSelected(index)
     }
 
     private fun setFragment(fragment: Fragment) {

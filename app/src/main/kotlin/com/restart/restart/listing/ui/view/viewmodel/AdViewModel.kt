@@ -1,18 +1,20 @@
 package com.restart.restart.listing.ui.view.viewmodel
 
+import android.content.Context
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import com.airbnb.epoxy.EpoxyHolder
 import com.airbnb.epoxy.EpoxyModelWithHolder
 import com.restart.restart.R
-import com.restart.restart.shared.RestartApplication
+import com.squareup.picasso.Picasso
 
 class AdViewModel(
     val title: String,
     val platform: String,
     val price: String,
-    val previewUrl: String) : EpoxyModelWithHolder<AdViewModel.ViewHolder>() {
+    val previewUrl: String,
+    val context: Context) : EpoxyModelWithHolder<AdViewModel.ViewHolder>() {
 
     override fun getDefaultLayout(): Int = R.layout.ad_cell
     override fun getSpanSize(totalSpanCount: Int, position: Int, itemCount: Int): Int = 2
@@ -25,10 +27,10 @@ class AdViewModel(
         holder?.title?.text = title
         holder?.platform?.text = platform
         holder?.price?.text = price
-        RestartApplication.picasso
-            ?.load(previewUrl)
-            ?.fit()
-            ?.into(preview)
+        Picasso.with(context)
+            .load(previewUrl)
+            .fit()
+            .into(preview)
     }
 
     class ViewHolder : EpoxyHolder() {
@@ -44,6 +46,15 @@ class AdViewModel(
             price = itemView?.findViewById(R.id.price) as TextView?
             preview = itemView?.findViewById(R.id.preview) as ImageView?
         }
+    }
 
+    class Factory(val context: Context) {
+        fun create(
+            title: String,
+            platform: String,
+            price: String,
+            previewUrl: String): AdViewModel {
+            return AdViewModel(title, platform, price, previewUrl, context)
+        }
     }
 }
