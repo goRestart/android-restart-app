@@ -9,6 +9,7 @@
 
     <dimen name="create_ad_navigation_icon_corner_radius">100dp</dimen>
     <dimen name="create_ad_navigation_icon_size">48dp</dimen>
+    <dimen name="create_ad_navigation_icon_padding">12dp</dimen>
 
     <dimen name="listing_padding_horizontal">16dp</dimen>
 
