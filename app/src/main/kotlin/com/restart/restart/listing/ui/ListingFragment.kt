@@ -4,7 +4,7 @@ import android.content.Context
 import android.graphics.Rect
 import android.os.Bundle
 import android.support.v4.app.Fragment
-import android.support.v7.widget.GridLayoutManager
+import android.support.v7.widget.StaggeredGridLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -18,7 +18,7 @@ import com.restart.restart.R
 import com.restart.restart.listing.ui.view.ListingAdapter
 import com.restart.restart.listing.ui.view.ListingConfiguration
 import com.restart.restart.listing.ui.view.viewmodel.AdViewModel
-import com.restart.restart.shared.ui.view.recyclerview.decoration.WholeContentPaddingItemDecoration
+import com.restart.restart.shared.ui.view.recyclerview.decoration.ContentPaddingItemDecoration
 import kotlinx.android.synthetic.main.profile.*
 
 
@@ -40,11 +40,11 @@ class ListingFragment : Fragment(), LazyKodeinAware {
         super.onViewCreated(view, savedInstanceState)
 
         adapter = ListingAdapter(adViewModelFactory)
-        val layoutManager = GridLayoutManager(context, ListingConfiguration.NUMBER_OF_COLUMNS)
-        layoutManager.spanSizeLookup = adapter?.spanSizeLookup
+        val layoutManager = StaggeredGridLayoutManager(ListingConfiguration.NUMBER_OF_COLUMNS, StaggeredGridLayoutManager.VERTICAL)
 
         content.layoutManager = layoutManager
         content.adapter = adapter
+        content.setHasFixedSize(false)
 
         addContentPaddingItemDecoration()
 
@@ -53,10 +53,13 @@ class ListingFragment : Fragment(), LazyKodeinAware {
 
     private fun addContentPaddingItemDecoration() {
         val horizontalPadding = resources.getDimension(R.dimen.listing_padding_horizontal).toInt()
+        val horizontalInnerPadding = resources.getDimension(R.dimen.listing_inner_padding_horizontal).toInt()
         val bottomPadding = resources.getDimension(R.dimen.listing_padding_bottom).toInt()
 
         val contentPaddingItemDecoration =
-            WholeContentPaddingItemDecoration(Rect(horizontalPadding, 0, horizontalPadding, bottomPadding))
+            ContentPaddingItemDecoration(
+                Rect(horizontalPadding, 0, horizontalPadding, bottomPadding),
+                Rect(horizontalInnerPadding, 0, horizontalInnerPadding, 0))
 
         content.addItemDecoration(contentPaddingItemDecoration)
     }

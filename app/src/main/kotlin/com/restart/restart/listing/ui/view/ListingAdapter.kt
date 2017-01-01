@@ -1,15 +1,17 @@
 package com.restart.restart.listing.ui.view
 
 import com.airbnb.epoxy.EpoxyAdapter
-import com.restart.restart.listing.ui.view.viewmodel.*
+import com.restart.restart.listing.ui.view.viewmodel.AdViewModel
+import com.restart.restart.listing.ui.view.viewmodel.DistanceFilterViewModel
+import com.restart.restart.listing.ui.view.viewmodel.SearchViewModel
+import com.restart.restart.listing.ui.view.viewmodel.TitleViewModel
 
 class ListingAdapter(adViewModelFactory: AdViewModel.Factory) : EpoxyAdapter() {
     init {
         addModels(
             TitleViewModel(),
             SearchViewModel(),
-            DistanceViewModel(),
-            FilterViewModel(),
+            DistanceFilterViewModel(),
             adViewModelFactory.create("Watch Dogs 2 Deluxe edition", "PS4", "55€",
                 "http://www.gamestop.com/common/images/lbox/127189b.jpg"),
             adViewModelFactory.create("Nintendo Classic mini", "CONSOLA", "90€",

@@ -17,7 +17,6 @@ class AdViewModel(
     val context: Context) : EpoxyModelWithHolder<AdViewModel.ViewHolder>() {
 
     override fun getDefaultLayout(): Int = R.layout.ad_cell
-    override fun getSpanSize(totalSpanCount: Int, position: Int, itemCount: Int): Int = 2
     override fun createNewHolder(): ViewHolder = ViewHolder()
 
     override fun bind(holder: ViewHolder?) {

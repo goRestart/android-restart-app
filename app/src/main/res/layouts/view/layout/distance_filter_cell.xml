@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/listing_distance_cell_height">
+
+    <TextView
+        android:id="@+id/distance"
+        style="@style/Subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@+id/filter"
+        android:layout_toStartOf="@+id/filter"
+        android:ellipsize="end"
+        android:lines="1"
+        />
+
+    <TextView
+        android:id="@+id/filter"
+        style="@style/Filter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/listing_filter_cell_margin_left"
+        android:layout_marginStart="@dimen/listing_filter_cell_margin_left"
+        android:background="@drawable/filter_button_background"
+        android:gravity="end"
+        android:paddingBottom="@dimen/listing_filter_cell_padding_vertical"
+        android:paddingEnd="@dimen/listing_filter_cell_padding_horizontal"
+        android:paddingLeft="@dimen/listing_filter_cell_padding_horizontal"
+        android:paddingRight="@dimen/listing_filter_cell_padding_horizontal"
+        android:paddingStart="@dimen/listing_filter_cell_padding_horizontal"
+        android:paddingTop="@dimen/listing_filter_cell_padding_vertical"
+        android:text="@string/listing_filter_cell"
+        />
+</RelativeLayout>

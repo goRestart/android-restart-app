@@ -12,20 +12,18 @@
     <dimen name="create_ad_navigation_icon_padding">12dp</dimen>
 
     <dimen name="listing_padding_horizontal">16dp</dimen>
+    <dimen name="listing_inner_padding_horizontal">4dp</dimen>
     <dimen name="listing_padding_bottom">16dp</dimen>
 
     <dimen name="listing_title_cell_margin_top">4dp</dimen>
-    <dimen name="listing_title_cell_height">36dp</dimen>
+    <dimen name="listing_title_cell_height">40dp</dimen>
 
     <dimen name="listing_search_cell_margin_top">8dp</dimen>
     <dimen name="listing_search_cell_height">48dp</dimen>
 
-    <dimen name="listing_distance_cell_margin_top">32dp</dimen>
-    <dimen name="listing_distance_cell_height">28dp</dimen>
+    <dimen name="listing_distance_cell_height">60dp</dimen>
 
-    <dimen name="listing_filter_cell_margin_top">37dp</dimen>
     <dimen name="listing_filter_cell_margin_left">12dp</dimen>
-    <dimen name="listing_filter_cell_height">24dp</dimen>
     <dimen name="listing_filter_cell_padding_horizontal">12dp</dimen>
     <dimen name="listing_filter_cell_padding_vertical">4dp</dimen>
     <dimen name="listing_filter_cell_corner_radius">100dp</dimen>
