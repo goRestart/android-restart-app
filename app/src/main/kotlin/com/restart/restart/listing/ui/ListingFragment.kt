@@ -16,13 +16,16 @@ import com.github.salomonbrys.kodein.factory
 import com.github.salomonbrys.kodein.lazy
 import com.restart.restart.R
 import com.restart.restart.listing.ui.view.ListingAdapter
-import com.restart.restart.listing.ui.view.ListingConfiguration
 import com.restart.restart.listing.ui.view.viewmodel.AdViewModel
 import com.restart.restart.shared.ui.view.recyclerview.decoration.ContentPaddingItemDecoration
 import kotlinx.android.synthetic.main.profile.*
 
 
 class ListingFragment : Fragment(), LazyKodeinAware {
+
+    companion object {
+        val NUMBER_OF_COLUMNS: Int = 2
+    }
 
     override val kodein = Kodein.lazy {
         extend(appKodein())
@@ -40,7 +43,7 @@ class ListingFragment : Fragment(), LazyKodeinAware {
         super.onViewCreated(view, savedInstanceState)
 
         adapter = ListingAdapter(adViewModelFactory)
-        val layoutManager = StaggeredGridLayoutManager(ListingConfiguration.NUMBER_OF_COLUMNS, StaggeredGridLayoutManager.VERTICAL)
+        val layoutManager = StaggeredGridLayoutManager(NUMBER_OF_COLUMNS, StaggeredGridLayoutManager.VERTICAL)
 
         content.layoutManager = layoutManager
         content.adapter = adapter

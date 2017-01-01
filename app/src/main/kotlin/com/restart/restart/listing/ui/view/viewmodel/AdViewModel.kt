@@ -8,6 +8,7 @@ import com.airbnb.epoxy.EpoxyHolder
 import com.airbnb.epoxy.EpoxyModelWithHolder
 import com.restart.restart.R
 import com.squareup.picasso.Picasso
+import jp.wasabeef.picasso.transformations.RoundedCornersTransformation
 
 class AdViewModel(
     val title: String,
@@ -16,6 +17,10 @@ class AdViewModel(
     val previewUrl: String,
     val context: Context) : EpoxyModelWithHolder<AdViewModel.ViewHolder>() {
 
+    companion object {
+        val PREVIEW_IMAGE_SIZE: Int = 500
+    }
+
     override fun getDefaultLayout(): Int = R.layout.ad_cell
     override fun createNewHolder(): ViewHolder = ViewHolder()
 
@@ -23,12 +28,15 @@ class AdViewModel(
         super.bind(holder)
         val preview = holder?.preview ?: return
 
+        val cornerRadius = preview.resources.getDimension(R.dimen.listing_ad_cell_image_corner_radius).toInt()
         holder?.title?.text = title
         holder?.platform?.text = platform
         holder?.price?.text = price
         Picasso.with(context)
             .load(previewUrl)
-            .fit()
+            .transform(RoundedCornersTransformation(cornerRadius, 0))
+            .resize(PREVIEW_IMAGE_SIZE, PREVIEW_IMAGE_SIZE)
+            .centerCrop()
             .into(preview)
     }
 
