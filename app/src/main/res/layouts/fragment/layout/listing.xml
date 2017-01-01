@@ -9,10 +9,6 @@
         android:id="@+id/content"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingEnd="@dimen/listing_padding_horizontal"
-        android:paddingLeft="@dimen/listing_padding_horizontal"
-        android:paddingRight="@dimen/listing_padding_horizontal"
-        android:paddingStart="@dimen/listing_padding_horizontal"
         />
 
 </FrameLayout>

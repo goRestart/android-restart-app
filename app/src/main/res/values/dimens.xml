@@ -12,6 +12,7 @@
     <dimen name="create_ad_navigation_icon_padding">12dp</dimen>
 
     <dimen name="listing_padding_horizontal">16dp</dimen>
+    <dimen name="listing_padding_bottom">16dp</dimen>
 
     <dimen name="listing_title_cell_margin_top">4dp</dimen>
     <dimen name="listing_title_cell_height">36dp</dimen>

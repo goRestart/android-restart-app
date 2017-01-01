@@ -1,6 +1,7 @@
 package com.restart.restart.listing.ui
 
 import android.content.Context
+import android.graphics.Rect
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.GridLayoutManager
@@ -17,6 +18,7 @@ import com.restart.restart.R
 import com.restart.restart.listing.ui.view.ListingAdapter
 import com.restart.restart.listing.ui.view.ListingConfiguration
 import com.restart.restart.listing.ui.view.viewmodel.AdViewModel
+import com.restart.restart.shared.ui.view.recyclerview.decoration.WholeContentPaddingItemDecoration
 import kotlinx.android.synthetic.main.profile.*
 
 
@@ -40,9 +42,22 @@ class ListingFragment : Fragment(), LazyKodeinAware {
         adapter = ListingAdapter(adViewModelFactory)
         val layoutManager = GridLayoutManager(context, ListingConfiguration.NUMBER_OF_COLUMNS)
         layoutManager.spanSizeLookup = adapter?.spanSizeLookup
+
         content.layoutManager = layoutManager
         content.adapter = adapter
 
+        addContentPaddingItemDecoration()
+
         adapter?.notifyDataSetChanged()
+    }
+
+    private fun addContentPaddingItemDecoration() {
+        val horizontalPadding = resources.getDimension(R.dimen.listing_padding_horizontal).toInt()
+        val bottomPadding = resources.getDimension(R.dimen.listing_padding_bottom).toInt()
+
+        val contentPaddingItemDecoration =
+            WholeContentPaddingItemDecoration(Rect(horizontalPadding, 0, horizontalPadding, bottomPadding))
+
+        content.addItemDecoration(contentPaddingItemDecoration)
     }
 }
