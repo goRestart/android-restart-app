@@ -1,6 +1,7 @@
 package com.restart.restart.shared.ui.view.bottomnavigation
 
 import android.content.Context
+import android.support.design.widget.CoordinatorLayout
 import android.util.AttributeSet
 import android.view.Gravity.CENTER
 import android.view.View
@@ -10,8 +11,10 @@ import android.view.ViewGroup.LayoutParams.WRAP_CONTENT
 import android.widget.FrameLayout
 import android.widget.LinearLayout
 import com.restart.restart.R
+import com.restart.restart.shared.ui.behavior.VerticalScrollingBehavior
 import kotlinx.android.synthetic.main.bottom_navigation_bar.view.*
 
+@CoordinatorLayout.DefaultBehavior(VerticalScrollingBehavior::class)
 class BottomNavigationBar : LinearLayout {
 
     private var items: List<NavigationItem> = emptyList()

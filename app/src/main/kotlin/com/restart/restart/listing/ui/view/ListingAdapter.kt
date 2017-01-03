@@ -6,22 +6,24 @@ import com.restart.restart.listing.ui.view.viewmodel.DistanceFilterViewModel
 import com.restart.restart.listing.ui.view.viewmodel.SearchViewModel
 import com.restart.restart.listing.ui.view.viewmodel.TitleViewModel
 
-class ListingAdapter(adViewModelFactory: AdViewModel.Factory) : EpoxyAdapter() {
+class ListingAdapter(val adViewModelFactory: AdViewModel.Factory) : EpoxyAdapter() {
     init {
         addModels(
             TitleViewModel(),
             SearchViewModel(),
-            DistanceFilterViewModel(),
-            adViewModelFactory.create("Watch Dogs 2 Deluxe edition", "PS4", "55€",
-                "http://www.gamestop.com/common/images/lbox/127189b.jpg"),
-            adViewModelFactory.create("Nintendo Classic mini", "CONSOLA", "90€",
-                "http://cdn02.nintendo-europe.com/media/images/10_share_images/others_3/H2x1_NintendoClassicMiniNES_Announcement.jpg"),
-            adViewModelFactory.create("No man’s sky", "PC", "35€", "http://s2.n4g.com/news/1937839_0.jpg"),
-            adViewModelFactory.create("Watch Dogs 2 Deluxe edition", "PS4", "55€",
-                "http://www.gamestop.com/common/images/lbox/127189b.jpg"),
-            adViewModelFactory.create("Nintendo Classic mini", "CONSOLA", "90€",
-                "http://cdn02.nintendo-europe.com/media/images/10_share_images/others_3/H2x1_NintendoClassicMiniNES_Announcement.jpg"),
-            adViewModelFactory.create("No man’s sky", "PC", "35€", "http://s2.n4g.com/news/1937839_0.jpg")
+            DistanceFilterViewModel()
         )
+        addModels(createAdViewModels(100))
+    }
+
+    private fun createAdViewModels(adsCount: Int): List<AdViewModel> {
+        val adViewModelsPool = arrayOf(
+            adViewModelFactory.create("Watch Dogs 2 Deluxe edition", "PS4", "55€",
+                "http://www.gamestop.com/common/images/lbox/127189b.jpg"),
+            adViewModelFactory.create("Nintendo Classic mini", "CONSOLA", "90€",
+                "http://cdn02.nintendo-europe.com/media/images/10_share_images/others_3/H2x1_NintendoClassicMiniNES_Announcement.jpg"),
+            adViewModelFactory.create("No man’s sky", "PC", "35€", "http://s2.n4g.com/news/1937839_0.jpg"))
+
+        return (0..adsCount).map { i -> adViewModelsPool[i % adViewModelsPool.size] }
     }
 }

@@ -47,7 +47,6 @@ class ListingFragment : Fragment(), LazyKodeinAware {
 
         content.layoutManager = layoutManager
         content.adapter = adapter
-        content.setHasFixedSize(false)
 
         addContentPaddingItemDecoration()
 
