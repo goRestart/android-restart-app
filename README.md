@@ -1,0 +1,5 @@
+# android-restart-app
+
+
+![app/screenshots/com.restart.restart.listing.ui.ListingFragmentScreenshotTest_shouldRenderAllItemsWhenThereAreSeveralItemsAvailable.png](app/screenshots/com.restart.restart.listing.ui.ListingFragmentScreenshotTest_shouldRenderAllItemsWhenThereAreSeveralItemsAvailable.png)
+
