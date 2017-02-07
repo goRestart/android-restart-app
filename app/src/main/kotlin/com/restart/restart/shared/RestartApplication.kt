@@ -1,16 +1,10 @@
 package com.restart.restart.shared
 
 import android.app.Application
-import com.github.salomonbrys.kodein.Kodein
-import com.github.salomonbrys.kodein.KodeinAware
-import com.github.salomonbrys.kodein.android.activityScope
-import com.github.salomonbrys.kodein.lazy
+import com.restart.restart.shared.di.DependencyContainer
 
-class RestartApplication : Application(), KodeinAware {
+class RestartApplication : Application() {
 
-    override val kodein by Kodein.lazy {}
+    val container: DependencyContainer = DependencyContainer()
 
-    override fun onCreate() {
-        registerActivityLifecycleCallbacks(activityScope.lifecycleManager)
-    }
 }
