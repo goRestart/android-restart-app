@@ -5,9 +5,8 @@ import nl.komponents.kovenant.Promise
 import nl.komponents.kovenant.task
 
 class GetProducts {
-
-    fun execute(): Promise<List<Product>, Exception> {
-        return task {
+    fun execute(): Promise<List<Product>, Exception> =
+        task {
             randomListOf(100,
                 Product("Watch Dogs 2 Deluxe edition", Platform.PS4, 5500,
                     "http://www.gamestop.com/common/images/lbox/127189b.jpg"),
@@ -16,5 +15,4 @@ class GetProducts {
                 Product("No man’s sky", Platform.PC, 3500, "http://s2.n4g.com/news/1937839_0.jpg")
             )
         }
-    }
 }
