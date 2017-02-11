@@ -15,7 +15,7 @@ class MainPresenter(private val view: WeakReference<View>) {
             listOf(
                 R.drawable.listing_navigation_icon,
                 R.drawable.favorites_navigation_icon,
-                R.drawable.create_ad_navigation_icon,
+                R.drawable.create_product_navigation_icon,
                 R.drawable.messages_navigation_icon,
                 R.drawable.profile_navigation_icon
             )

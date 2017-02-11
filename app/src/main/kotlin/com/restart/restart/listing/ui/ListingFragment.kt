@@ -7,8 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.restart.restart.R
+import com.restart.restart.listing.domain.Product
 import com.restart.restart.listing.ui.view.ListingAdapter
-import com.restart.restart.listing.ui.view.viewmodel.AdViewModel
+import com.restart.restart.listing.ui.view.viewmodel.ProductViewModel
 import com.restart.restart.shared.ui.RestartFragment
 import com.restart.restart.shared.ui.view.recyclerview.decoration.ContentPaddingItemDecoration
 import kotlinx.android.synthetic.main.profile.*
@@ -20,7 +21,7 @@ class ListingFragment : RestartFragment(), ListingPresenter.View {
         val NUMBER_OF_COLUMNS: Int = 2
     }
 
-    private var adViewModelFactory: AdViewModel.Factory? = null
+    private var productViewModelFactory: ProductViewModel.Factory? = null
     private var adapter: ListingAdapter? = null
     private var presenter: ListingPresenter? = null
 
@@ -31,10 +32,10 @@ class ListingFragment : RestartFragment(), ListingPresenter.View {
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        adViewModelFactory = AdViewModel.Factory(context)
+        productViewModelFactory = ProductViewModel.Factory(context)
         presenter = dependencyContainer!!.listing.getPresenter(this)
 
-        adapter = ListingAdapter(adViewModelFactory!!)
+        adapter = ListingAdapter(productViewModelFactory!!)
         val layoutManager = StaggeredGridLayoutManager(NUMBER_OF_COLUMNS, StaggeredGridLayoutManager.VERTICAL)
 
         content.layoutManager = layoutManager
@@ -45,8 +46,12 @@ class ListingFragment : RestartFragment(), ListingPresenter.View {
         adapter?.notifyDataSetChanged()
     }
 
-    override fun showProducts(products: List<AdViewModel>) {
-        throw UnsupportedOperationException("not implemented") //To change body of created functions use File | Settings | File Templates.
+    override fun showProducts(products: List<Product>) {
+
+    }
+
+    override fun showError() {
+
     }
 
     private fun addContentPaddingItemDecoration() {
