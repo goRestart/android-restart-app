@@ -34,8 +34,6 @@
     <dimen name="listing_ad_cell_image_height">160dp</dimen>
     <dimen name="listing_ad_cell_image_margin_bottom">0dp</dimen>
     <dimen name="listing_ad_cell_image_corner_radius">4dp</dimen>
-    <dimen name="listing_ad_cell_platform_tag_padding_vertical">3dp</dimen>
-    <dimen name="listing_ad_cell_platform_tag_padding_horizontal">6dp</dimen>
     <dimen name="listing_ad_cell_platform_tag_margin_left">-3dp</dimen>
     <dimen name="listing_ad_cell_platform_tag_margin_bottom">5dp</dimen>
     <dimen name="listing_ad_cell_platform_tag_corner_radius">2dp</dimen>
@@ -44,4 +42,7 @@
 
     <dimen name="tag_padding_horizontal">12dp</dimen>
     <dimen name="tag_padding_vertical">4dp</dimen>
+    
+    <dimen name="platform_tag_padding_horizontal">6dp</dimen>
+    <dimen name="platform_tag_padding_vertical">3dp</dimen>
 </resources>

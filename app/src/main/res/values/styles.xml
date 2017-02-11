@@ -61,6 +61,12 @@
         <item name="android:fontFamily">sans-serif</item>
         <item name="android:textSize">@dimen/tiny</item>
         <item name="android:textStyle">bold</item>
+        <item name="android:capitalize">characters</item>
+        <item name="android:paddingLeft">@dimen/platform_tag_padding_horizontal</item>
+        <item name="android:paddingRight">@dimen/platform_tag_padding_horizontal</item>
+        <item name="android:paddingTop">@dimen/platform_tag_padding_vertical</item>
+        <item name="android:paddingBottom">@dimen/platform_tag_padding_vertical</item>
+        <item name="android:background">@drawable/platform_tag_background</item>
     </style>
 
     <style name="Description">

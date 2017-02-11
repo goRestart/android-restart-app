@@ -1,11 +1,16 @@
 package com.restart.restart.product.domain
 
+import com.restart.restart.product.storage.ProductStorage
 import nl.komponents.kovenant.Promise
 import nl.komponents.kovenant.task
 
-class GetProduct {
+class GetProduct(
+    private val storage: ProductStorage
+) {
     fun execute(id: String): Promise<ProductDetail, Exception> =
         task {
-            ProductDetail("")
+            storage.get(id) ?: throw NotFoundException()
         }
+
+    class NotFoundException : Exception()
 }

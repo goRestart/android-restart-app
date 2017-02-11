@@ -48,7 +48,6 @@
                 android:layout_marginStart="@dimen/product_platform_margin_left"
                 android:layout_toEndOf="@id/price"
                 android:layout_toRightOf="@id/price"
-                android:background="@drawable/platform_tag_background"
                 android:text="NINTENDO DS"/>
 
             <ImageView

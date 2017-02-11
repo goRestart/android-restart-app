@@ -24,10 +24,14 @@ class ProductActivity : RestartActivity(), ProductPresenter.View {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.product)
         inject()
+        presenter?.onStart()
     }
 
     private fun inject() {
-        presenter = dependencyContainer!!.product.getPresenter(this)
+        presenter = dependencyContainer!!.product.getPresenter(
+            this,
+            intent.extras.getString(PRODUCT_ID)
+        )
     }
 
     override fun showProduct() {
