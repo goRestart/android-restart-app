@@ -7,6 +7,7 @@ import android.widget.TextView
 import com.airbnb.epoxy.EpoxyHolder
 import com.airbnb.epoxy.EpoxyModelWithHolder
 import com.restart.restart.R
+import com.restart.restart.product.ui.ProductActivity
 import com.squareup.picasso.Picasso
 import jp.wasabeef.picasso.transformations.RoundedCornersTransformation
 
@@ -32,6 +33,11 @@ class ProductViewModel(
         holder?.title?.text = title
         holder?.platform?.text = platform
         holder?.price?.text = price
+        holder?.content?.setOnClickListener({
+            val intent = ProductActivity.intent(context, "")
+            context.startActivity(intent)
+        })
+
         Picasso.with(context)
             .load(previewUrl)
             .transform(RoundedCornersTransformation(cornerRadius, 0))
@@ -46,12 +52,14 @@ class ProductViewModel(
         var platform: TextView? = null
         var price: TextView? = null
         var preview: ImageView? = null
+        var content: View? = null
 
         override fun bindView(itemView: View?) {
             title = itemView?.findViewById(R.id.title) as TextView?
             platform = itemView?.findViewById(R.id.platform) as TextView?
             price = itemView?.findViewById(R.id.price) as TextView?
             preview = itemView?.findViewById(R.id.preview) as ImageView?
+            content = itemView
         }
     }
 }
