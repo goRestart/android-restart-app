@@ -7,7 +7,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.restart.restart.R
-import com.restart.restart.listing.domain.Product
 import com.restart.restart.listing.ui.view.ListingAdapter
 import com.restart.restart.listing.ui.view.viewmodel.ProductViewModel
 import com.restart.restart.shared.ui.RestartFragment
@@ -21,7 +20,6 @@ class ListingFragment : RestartFragment(), ListingPresenter.View {
         val NUMBER_OF_COLUMNS: Int = 2
     }
 
-    private var productViewModelFactory: ProductViewModel.Factory? = null
     private var adapter: ListingAdapter? = null
     private var presenter: ListingPresenter? = null
 
@@ -31,27 +29,30 @@ class ListingFragment : RestartFragment(), ListingPresenter.View {
 
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        productViewModelFactory = ProductViewModel.Factory(context)
-        presenter = dependencyContainer!!.listing.getPresenter(this)
-
-        adapter = ListingAdapter(productViewModelFactory!!)
-        val layoutManager = StaggeredGridLayoutManager(NUMBER_OF_COLUMNS, StaggeredGridLayoutManager.VERTICAL)
-
-        content.layoutManager = layoutManager
-        content.adapter = adapter
-
+        inject()
+        configureRecyclerView()
         addContentPaddingItemDecoration()
-
-        adapter?.notifyDataSetChanged()
+        presenter?.onStart()
     }
 
-    override fun showProducts(products: List<Product>) {
-
+    override fun showProducts(products: List<ProductViewModel>) {
+        adapter?.addProducts(products)
+        adapter?.notifyDataSetChanged()
     }
 
     override fun showError() {
 
+    }
+
+    private fun inject() {
+        presenter = dependencyContainer!!.listing.getPresenter(this, context)
+    }
+
+    private fun configureRecyclerView() {
+        adapter = ListingAdapter()
+        val layoutManager = StaggeredGridLayoutManager(NUMBER_OF_COLUMNS, StaggeredGridLayoutManager.VERTICAL)
+        content.layoutManager = layoutManager
+        content.adapter = adapter
     }
 
     private fun addContentPaddingItemDecoration() {

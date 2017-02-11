@@ -1,18 +1,25 @@
 package com.restart.restart.listing.di
 
+import android.content.Context
 import com.restart.restart.listing.domain.GetProducts
 import com.restart.restart.listing.ui.ListingPresenter
+import com.restart.restart.listing.ui.view.viewmodel.ProductViewModelMapper
 import java.lang.ref.WeakReference
 
 class ListingContainer {
 
-    fun getPresenter(view: ListingPresenter.View): ListingPresenter {
+    fun getPresenter(view: ListingPresenter.View, context: Context): ListingPresenter {
         return ListingPresenter(
             WeakReference(view),
-            getProducts
+            getProducts,
+            getProductViewModelMapper(context)
         )
     }
 
+    fun getProductViewModelMapper(context: Context): ProductViewModelMapper {
+        return ProductViewModelMapper(context)
+    }
+
     val getProducts: GetProducts
-    get() = GetProducts()
+        get() = GetProducts()
 }

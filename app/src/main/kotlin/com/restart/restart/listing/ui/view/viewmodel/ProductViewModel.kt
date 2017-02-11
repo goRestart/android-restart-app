@@ -54,14 +54,4 @@ class ProductViewModel(
             preview = itemView?.findViewById(R.id.preview) as ImageView?
         }
     }
-
-    class Factory(val context: Context) {
-        fun create(
-            title: String,
-            platform: String,
-            price: String,
-            previewUrl: String): ProductViewModel {
-            return ProductViewModel(title, platform, price, previewUrl, context)
-        }
-    }
 }
