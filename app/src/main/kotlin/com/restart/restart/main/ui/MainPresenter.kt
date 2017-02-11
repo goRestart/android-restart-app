@@ -1,10 +1,9 @@
 package com.restart.restart.main.ui
 
 import com.restart.restart.R
+import java.lang.ref.WeakReference
 
-class MainPresenter() {
-
-    var view: View? = null
+class MainPresenter(private val view: WeakReference<View>) {
 
     interface View {
         fun addNavigationItems(icons: List<Int>)
@@ -12,19 +11,19 @@ class MainPresenter() {
     }
 
     fun onStart() {
-        view?.addNavigationItems(
+        view.get()?.addNavigationItems(
             listOf(
                 R.drawable.listing_navigation_icon,
                 R.drawable.favorites_navigation_icon,
-                R.drawable.create_ad_navigation_icon,
+                R.drawable.create_product_navigation_icon,
                 R.drawable.messages_navigation_icon,
                 R.drawable.profile_navigation_icon
             )
         )
-        view?.moveToFragment(0)
+        view.get()?.moveToFragment(0)
     }
 
     fun onItemSelected(index: Int) {
-        view?.moveToFragment(index)
+        view.get()?.moveToFragment(index)
     }
 }

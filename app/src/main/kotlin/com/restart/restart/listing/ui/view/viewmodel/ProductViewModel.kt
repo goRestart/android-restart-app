@@ -10,18 +10,18 @@ import com.restart.restart.R
 import com.squareup.picasso.Picasso
 import jp.wasabeef.picasso.transformations.RoundedCornersTransformation
 
-class AdViewModel(
+class ProductViewModel(
     val title: String,
     val platform: String,
     val price: String,
     val previewUrl: String,
-    val context: Context) : EpoxyModelWithHolder<AdViewModel.ViewHolder>() {
+    val context: Context) : EpoxyModelWithHolder<ProductViewModel.ViewHolder>() {
 
     companion object {
         val PREVIEW_IMAGE_SIZE: Int = 500
     }
 
-    override fun getDefaultLayout(): Int = R.layout.ad_cell
+    override fun getDefaultLayout(): Int = R.layout.product_cell
     override fun createNewHolder(): ViewHolder = ViewHolder()
 
     override fun bind(holder: ViewHolder?) {
@@ -52,16 +52,6 @@ class AdViewModel(
             platform = itemView?.findViewById(R.id.platform) as TextView?
             price = itemView?.findViewById(R.id.price) as TextView?
             preview = itemView?.findViewById(R.id.preview) as ImageView?
-        }
-    }
-
-    class Factory(val context: Context) {
-        fun create(
-            title: String,
-            platform: String,
-            price: String,
-            previewUrl: String): AdViewModel {
-            return AdViewModel(title, platform, price, previewUrl, context)
         }
     }
 }

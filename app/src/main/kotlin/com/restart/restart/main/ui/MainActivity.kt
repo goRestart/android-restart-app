@@ -2,36 +2,24 @@ package com.restart.restart.main.ui
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
-import android.support.v7.app.AppCompatActivity
-import com.github.salomonbrys.kodein.Kodein
-import com.github.salomonbrys.kodein.LazyKodeinAware
-import com.github.salomonbrys.kodein.android.appKodein
-import com.github.salomonbrys.kodein.instance
-import com.github.salomonbrys.kodein.lazy
 import com.restart.restart.R
 import com.restart.restart.favorites.ui.FavoritesFragment
 import com.restart.restart.listing.ui.ListingFragment
 import com.restart.restart.messages.ui.MessagesFragment
 import com.restart.restart.profile.ui.ProfileFragment
+import com.restart.restart.shared.ui.RestartActivity
 import com.restart.restart.shared.ui.view.bottomnavigation.ImageNavigationItem
 import kotlinx.android.synthetic.main.main.*
 
-class MainActivity : AppCompatActivity(), MainPresenter.View, LazyKodeinAware {
+class MainActivity : RestartActivity(), MainPresenter.View {
 
-    override val kodein = Kodein.lazy {
-        extend(appKodein())
-        bind<MainPresenter>() with instance(MainPresenter())
-    }
-
-    val presenter: MainPresenter by instance()
+    var presenter: MainPresenter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        presenter = dependencyContainer!!.getMainPresenter(this)
         setContentView(R.layout.main)
-
-        presenter.view = this
-        presenter.onStart()
-
+        presenter?.onStart()
         bottom_navigation_bar.onNavigationItemSelected = { onFragmentSelected(it) }
     }
 
@@ -53,7 +41,7 @@ class MainActivity : AppCompatActivity(), MainPresenter.View, LazyKodeinAware {
     }
 
     private fun onFragmentSelected(index: Int) {
-        presenter.onItemSelected(index)
+        presenter?.onItemSelected(index)
     }
 
     private fun setFragment(fragment: Fragment) {
