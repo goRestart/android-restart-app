@@ -1,6 +1,7 @@
 package com.restart.restart.product.ui
 
 import android.os.Bundle
+import com.restart.restart.R
 import com.restart.restart.shared.ui.RestartActivity
 
 class ProductActivity : RestartActivity(), ProductPresenter.View {
@@ -9,6 +10,7 @@ class ProductActivity : RestartActivity(), ProductPresenter.View {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.product)
         inject()
     }
 
@@ -21,6 +23,6 @@ class ProductActivity : RestartActivity(), ProductPresenter.View {
     }
 
     override fun showError() {
-        
+
     }
 }

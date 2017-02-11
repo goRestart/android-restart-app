@@ -1,15 +1,199 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/ivory">
+    android:layout_height="match_parent">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/content"
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:isScrollContainer="false"
-        />
+        android:layout_height="wrap_content"
+        android:background="@color/ivory"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/product_content_padding_bottom"
+        android:paddingEnd="@dimen/product_content_padding_horizontal"
+        android:paddingLeft="@dimen/product_content_padding_horizontal"
+        android:paddingRight="@dimen/product_content_padding_horizontal"
+        android:paddingStart="@dimen/product_content_padding_horizontal">
 
-</FrameLayout>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:background="@color/light_ash"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/product_price_row_margin_top">
+
+            <TextView
+                android:id="@+id/price"
+                style="@style/Price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:text="90‎€"
+                android:textSize="@dimen/title"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/platform"
+                style="@style/Platform"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/product_platform_margin_left"
+                android:layout_marginStart="@dimen/product_platform_margin_left"
+                android:layout_toEndOf="@id/price"
+                android:layout_toRightOf="@id/price"
+                android:background="@drawable/platform_tag_background"
+                android:text="NINTENDO DS"/>
+
+            <ImageView
+                android:id="@+id/favorite"
+                android:layout_width="@dimen/favorite_product_icon_width"
+                android:layout_height="@dimen/favorite_product_icon_height"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/favorite_product_icon_unselected"/>
+
+            <ImageView
+                android:id="@+id/wishlist"
+                android:layout_width="@dimen/wishlist_product_icon_width"
+                android:layout_height="@dimen/wishlist_product_icon_height"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/wishlist_product_icon_margin_right"
+                android:layout_marginRight="@dimen/wishlist_product_icon_margin_right"
+                android:layout_toLeftOf="@id/favorite"
+                android:layout_toStartOf="@id/favorite"
+                android:src="@drawable/favorites_navigation_icon_unselected"/>
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/title"
+            style="@style/Header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/product_title_margin_top"
+            android:text="Nintendo Classic mini"/>
+
+        <TextView
+            android:id="@+id/description"
+            style="@style/Description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/product_description_margin_top"
+            android:text="Consola nueva, muy entretenida. La vendo por que necesito el dinero. La volveré a comprar en un futuro."/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/product_visitors_margin_top"
+            android:text="Hace 16 horas · 160 visitas"
+            android:textColor="@color/cloudy"
+            android:textSize="@dimen/narrow"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/product_separator_height"
+            android:layout_marginTop="@dimen/product_separator_margin_top"
+            android:background="@color/ash"
+            />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/product_location_row_margin_top">
+
+            <TextView
+                style="@style/Header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:text="Ubicación"/>
+
+            <TextView
+                style="@style/Tag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:text="VER EN EL MAPA"/>
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:layout_marginTop="@dimen/product_map_margin_top"
+            android:background="@color/ash"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/product_seller_margin_top">
+
+            <TextView
+                style="@style/Header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:text="Vendedor"/>
+
+            <TextView
+                style="@style/Tag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:text="VER PERFIL"/>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/product_seller_details_margin_top"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/product_seller_avatar_size"
+                android:layout_height="@dimen/product_seller_avatar_size"
+                android:background="@color/light_violet"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/product_seller_name_margin_left"
+                android:layout_marginStart="@dimen/product_seller_name_margin_left"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/Title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="isiriszgz"/>
+
+                <TextView
+                    style="@style/Description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1 producto"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

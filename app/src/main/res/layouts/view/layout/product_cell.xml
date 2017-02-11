@@ -47,7 +47,7 @@
 
     <TextView
         android:id="@+id/title"
-        style="@style/Header"
+        style="@style/Regular"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/listing_ad_cell_title_margin_top"
