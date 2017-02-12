@@ -1,5 +1,6 @@
 package com.restart.restart.domain.usecase
 
+import com.restart.restart.domain.model.ProductDetail
 import com.restart.restart.product.storage.ProductStorage
 import nl.komponents.kovenant.Promise
 import nl.komponents.kovenant.task

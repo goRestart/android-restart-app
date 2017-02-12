@@ -4,6 +4,7 @@ import com.restart.restart.domain.usecase.GetProduct
 import com.restart.restart.product.ui.viewmodel.ProductDetailViewModel
 import com.restart.restart.product.ui.viewmodel.ProductDetailViewModelMapper
 import com.restart.restart.shared.extensions.ref.invoke
+import nl.komponents.kovenant.ui.failUi
 import nl.komponents.kovenant.ui.successUi
 import java.lang.ref.WeakReference
 

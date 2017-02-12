@@ -11,8 +11,7 @@ data class ProductDetailViewModel(
     val previewUrl: String,
     val isFavorite: Boolean,
     val isInWishlist: Boolean,
-    val publishingTime: String,
-    val visitsCount: String,
+    val publishingTimeAndVisitsCount: String,
     val location: Location,
     val sellerName: String,
     val sellerProductsCount: String

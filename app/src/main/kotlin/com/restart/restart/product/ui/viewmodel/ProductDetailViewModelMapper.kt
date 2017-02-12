@@ -16,19 +16,14 @@ class ProductDetailViewModelMapper(
             product.previewUrl,
             product.isFavorite,
             product.isInWishlist,
-            mapPublishingTime(product.publishingTime),
-            mapVisitsCount(product.visitsCount),
+            mapPublishingTimeAndVisitsCount(product.publishingTime, product.visitsCount),
             product.location,
             product.seller.name,
             mapSellerProductsCount(product.seller.sellingProductsCount)
         )
 
-    private fun mapPublishingTime(publishingTime: Long): String {
-        return "Hace 16 horas"
-    }
-
-    private fun mapVisitsCount(visitsCount: Int): String {
-        return "$visitsCount visitas"
+    private fun mapPublishingTimeAndVisitsCount(publishingTime: Long, visitsCount: Int): String {
+        return "Hace 16 horas · 160 visitas"
     }
 
     private fun mapSellerProductsCount(sellerProductsCount: Int): String {

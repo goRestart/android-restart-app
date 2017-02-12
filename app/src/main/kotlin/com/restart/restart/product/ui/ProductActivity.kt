@@ -6,6 +6,8 @@ import android.os.Bundle
 import com.restart.restart.R
 import com.restart.restart.product.ui.viewmodel.ProductDetailViewModel
 import com.restart.restart.shared.ui.RestartActivity
+import com.squareup.picasso.Picasso
+import kotlinx.android.synthetic.main.product.*
 
 class ProductActivity : RestartActivity(), ProductPresenter.View {
 
@@ -36,7 +38,19 @@ class ProductActivity : RestartActivity(), ProductPresenter.View {
     }
 
     override fun showProduct(product: ProductDetailViewModel) {
+        Picasso.with(this)
+            .load(product.previewUrl)
+            .into(preview)
 
+        price.text = product.price
+        platform.text = product.platform
+        favorite.isSelected = product.isFavorite
+        wishlist.isSelected = product.isInWishlist
+        product_title.text = product.title
+        description.text = product.description
+        time_and_visits.text = product.publishingTimeAndVisitsCount
+        seller_name.text = product.sellerName
+        seller_products_count.text = product.sellerProductsCount
     }
 
     override fun showError() {
