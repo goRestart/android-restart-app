@@ -1,4 +1,4 @@
-package com.restart.restart.listing.domain
+package com.restart.restart.domain.model
 
 data class Product(
     val id: String,

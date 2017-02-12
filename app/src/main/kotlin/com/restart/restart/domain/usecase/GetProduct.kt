@@ -1,4 +1,4 @@
-package com.restart.restart.product.domain
+package com.restart.restart.domain.usecase
 
 import com.restart.restart.product.storage.ProductStorage
 import nl.komponents.kovenant.Promise

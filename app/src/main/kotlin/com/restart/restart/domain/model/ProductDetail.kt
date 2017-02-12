@@ -1,7 +1,7 @@
-package com.restart.restart.product.domain
+package com.restart.restart.domain.model
 
 import android.location.Location
-import com.restart.restart.listing.domain.Platform
+import com.restart.restart.domain.model.Platform
 
 data class ProductDetail(
     val id: String,

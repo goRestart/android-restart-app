@@ -1,4 +1,4 @@
-package com.restart.restart.listing.domain
+package com.restart.restart.domain.usecase
 
 import com.restart.restart.shared.extensions.collections.randomListOf
 import nl.komponents.kovenant.Promise

@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import com.restart.restart.R
+import com.restart.restart.product.ui.viewmodel.ProductDetailViewModel
 import com.restart.restart.shared.ui.RestartActivity
 
 class ProductActivity : RestartActivity(), ProductPresenter.View {
@@ -34,7 +35,7 @@ class ProductActivity : RestartActivity(), ProductPresenter.View {
         )
     }
 
-    override fun showProduct() {
+    override fun showProduct(product: ProductDetailViewModel) {
 
     }
 

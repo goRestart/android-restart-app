@@ -1,6 +1,6 @@
 package com.restart.restart.product.storage
 
-import com.restart.restart.product.domain.ProductDetail
+import com.restart.restart.domain.model.ProductDetail
 import java.util.*
 
 class ProductStorage {

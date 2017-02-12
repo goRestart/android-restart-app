@@ -1,7 +1,7 @@
 package com.restart.restart.listing.di
 
 import android.content.Context
-import com.restart.restart.listing.domain.GetProducts
+import com.restart.restart.domain.usecase.GetProducts
 import com.restart.restart.listing.ui.ListingPresenter
 import com.restart.restart.listing.ui.view.viewmodel.ProductViewModelMapper
 import java.lang.ref.WeakReference

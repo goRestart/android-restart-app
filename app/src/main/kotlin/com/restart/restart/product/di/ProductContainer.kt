@@ -1,6 +1,6 @@
 package com.restart.restart.product.di
 
-import com.restart.restart.product.domain.GetProduct
+import com.restart.restart.domain.usecase.GetProduct
 import com.restart.restart.product.storage.ProductStorage
 import com.restart.restart.product.ui.ProductPresenter
 import java.lang.ref.WeakReference

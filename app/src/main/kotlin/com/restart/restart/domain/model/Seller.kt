@@ -1,4 +1,4 @@
-package com.restart.restart.product.domain
+package com.restart.restart.domain.model
 
 data class Seller(
     val name: String,

@@ -1,6 +1,6 @@
 package com.restart.restart.listing.ui
 
-import com.restart.restart.listing.domain.GetProducts
+import com.restart.restart.domain.usecase.GetProducts
 import com.restart.restart.listing.ui.view.viewmodel.ProductViewModel
 import com.restart.restart.listing.ui.view.viewmodel.ProductViewModelMapper
 import com.restart.restart.shared.extensions.ref.invoke
