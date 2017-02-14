@@ -1,7 +1,7 @@
 package com.restart.restart.domain.usecase
 
 import com.restart.restart.domain.model.ProductDetail
-import com.restart.restart.product.storage.ProductStorage
+import com.restart.restart.storage.ProductStorage
 import nl.komponents.kovenant.Promise
 import nl.komponents.kovenant.task
 
@@ -10,7 +10,7 @@ class GetProduct(
 ) {
     fun execute(id: String): Promise<ProductDetail, Exception> =
         task {
-            storage.get(id) ?: throw NotFoundException()
+            storage.getDetail(id) ?: throw NotFoundException()
         }
 
     class NotFoundException : Exception()
