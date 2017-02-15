@@ -2,6 +2,8 @@
 <resources>
     <dimen name="product_content_padding_horizontal">16dp</dimen>
     <dimen name="product_content_padding_bottom">32dp</dimen>
+    <dimen name="product_image_margin_top">56dp</dimen>
+    <dimen name="product_image_height">250dp</dimen>
     <dimen name="product_price_row_margin_top">8dp</dimen>
     <dimen name="product_platform_margin_left">8dp</dimen>
     <dimen name="wishlist_product_icon_width">24dp</dimen>

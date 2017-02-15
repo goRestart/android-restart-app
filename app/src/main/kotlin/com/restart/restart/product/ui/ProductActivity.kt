@@ -7,6 +7,7 @@ import com.restart.restart.R
 import com.restart.restart.product.ui.viewmodel.ProductDetailViewModel
 import com.restart.restart.shared.ui.RestartActivity
 import com.squareup.picasso.Picasso
+import jp.wasabeef.picasso.transformations.RoundedCornersTransformation
 import kotlinx.android.synthetic.main.product.*
 
 class ProductActivity : RestartActivity(), ProductPresenter.View {
@@ -40,6 +41,9 @@ class ProductActivity : RestartActivity(), ProductPresenter.View {
     override fun showProduct(product: ProductDetailViewModel) {
         Picasso.with(this)
             .load(product.previewUrl)
+            .fit()
+            .centerCrop()
+            .transform(RoundedCornersTransformation(8, 0))
             .into(preview)
 
         price.text = product.price
