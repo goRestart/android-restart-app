@@ -15,7 +15,7 @@ apply plugin: 'com.facebook.testing.screenshot'
 
 android {
     compileSdkVersion 25
-    buildToolsVersion "24.0.2"
+    buildToolsVersion "23.0.3"
     defaultConfig {
         applicationId "com.restart.restart"
         minSdkVersion 16
