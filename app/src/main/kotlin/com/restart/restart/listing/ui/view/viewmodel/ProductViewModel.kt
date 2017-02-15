@@ -12,6 +12,7 @@ import com.squareup.picasso.Picasso
 import jp.wasabeef.picasso.transformations.RoundedCornersTransformation
 
 class ProductViewModel(
+    val id: String,
     val title: String,
     val platform: String,
     val price: String,
@@ -34,7 +35,7 @@ class ProductViewModel(
         holder?.platform?.text = platform
         holder?.price?.text = price
         holder?.content?.setOnClickListener({
-            val intent = ProductActivity.intent(context, "")
+            val intent = ProductActivity.intent(context, id)
             context.startActivity(intent)
         })
 

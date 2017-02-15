@@ -12,6 +12,7 @@ class ProductViewModelMapper(
 ) {
     fun map(product: Product): ProductViewModel =
         ProductViewModel(
+            product.id,
             product.title,
             platformMapper.map(product.platform),
             priceMapper.map(product.priceInMilliEuros),
