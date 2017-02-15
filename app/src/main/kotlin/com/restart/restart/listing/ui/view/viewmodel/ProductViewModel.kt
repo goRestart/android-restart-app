@@ -1,6 +1,9 @@
 package com.restart.restart.listing.ui.view.viewmodel
 
+import android.app.Activity
 import android.content.Context
+import android.support.v4.app.ActivityCompat
+import android.support.v4.app.ActivityOptionsCompat
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
@@ -19,10 +22,6 @@ class ProductViewModel(
     val previewUrl: String,
     val context: Context) : EpoxyModelWithHolder<ProductViewModel.ViewHolder>() {
 
-    companion object {
-        val PREVIEW_IMAGE_SIZE: Int = 500
-    }
-
     override fun getDefaultLayout(): Int = R.layout.product_cell
     override fun createNewHolder(): ViewHolder = ViewHolder()
 
@@ -36,13 +35,18 @@ class ProductViewModel(
         holder?.price?.text = price
         holder?.content?.setOnClickListener({
             val intent = ProductActivity.intent(context, id)
-            context.startActivity(intent)
+            val transitionName = context.getString(R.string.product_image_transition_name)
+            val options = ActivityOptionsCompat.makeSceneTransitionAnimation(
+                context as Activity,
+                holder.preview,
+                transitionName)
+            ActivityCompat.startActivity(context, intent, options.toBundle())
         })
 
         Picasso.with(context)
             .load(previewUrl)
             .transform(RoundedCornersTransformation(cornerRadius, 0))
-            .resize(PREVIEW_IMAGE_SIZE, PREVIEW_IMAGE_SIZE)
+            .fit()
             .centerCrop()
             .into(preview)
     }

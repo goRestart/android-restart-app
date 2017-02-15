@@ -21,6 +21,7 @@
             android:layout_alignParentTop="true"
             android:layout_marginBottom="@dimen/listing_ad_cell_image_margin_bottom"
             android:background="@color/ash"
+            android:transitionName="@string/product_image_transition_name"
             />
 
         <TextView

@@ -1,4 +1,5 @@
 <resources>
+    <string name="product_image_transition_name">Product Image Transition Name</string>
     <string name="app_name">Restart</string>
     <string name="listing_title_cell">What are you looking for?</string>
     <string name="listing_query_hint">Pokemon sol, Battlefield 1…</string>

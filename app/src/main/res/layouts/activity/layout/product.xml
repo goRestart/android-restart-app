@@ -21,7 +21,8 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/product_image_height"
             android:layout_marginTop="@dimen/product_image_margin_top"
-            android:background="@color/light_ash"/>
+            android:background="@color/light_ash"
+            android:transitionName="@string/product_image_transition_name"/>
 
         <RelativeLayout
             android:layout_width="match_parent"
