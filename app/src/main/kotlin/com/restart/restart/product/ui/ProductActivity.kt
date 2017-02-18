@@ -95,6 +95,9 @@ class ImagesPagerAdapter(
         val itemView = layoutInflater.inflate(R.layout.view_pager_image, container, false)
         val imageView = itemView.findViewById(R.id.view_pager_image) as ImageView
 
+        itemView.tag = position
+        imageView.tag = position
+
         if (position == 0) {
             configureTransition(imageView)
         }
@@ -115,7 +118,7 @@ class ImagesPagerAdapter(
     }
 
     override fun isViewFromObject(view: View?, `object`: Any?): Boolean {
-        return view?.id == R.id.view_pager_container
+        return view?.tag == (`object` as View).tag
     }
 
     override fun getCount(): Int {
