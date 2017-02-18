@@ -12,8 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="com.restart.restart.main.ui.MainActivity"
-            android:windowSoftInputMode="stateVisible|adjustPan">
+            android:name="com.restart.restart.main.ui.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
