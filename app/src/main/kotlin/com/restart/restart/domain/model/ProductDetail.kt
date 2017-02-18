@@ -1,7 +1,6 @@
 package com.restart.restart.domain.model
 
 import android.location.Location
-import com.restart.restart.domain.model.Platform
 
 data class ProductDetail(
     val id: String,
@@ -9,7 +8,7 @@ data class ProductDetail(
     val description: String,
     val platform: Platform,
     val priceInMilliEuros: Int,
-    val previewUrl: String,
+    val previewUrls: List<String>,
     val isFavorite: Boolean,
     val isInWishlist: Boolean,
     val publishingTime: Long,

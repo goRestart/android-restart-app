@@ -13,7 +13,7 @@ class ProductDetailViewModelMapper(
             product.description,
             platformMapper.map(product.platform),
             priceMapper.map(product.priceInMilliEuros),
-            product.previewUrl,
+            product.previewUrls,
             product.isFavorite,
             product.isInWishlist,
             mapPublishingTimeAndVisitsCount(product.publishingTime, product.visitsCount),

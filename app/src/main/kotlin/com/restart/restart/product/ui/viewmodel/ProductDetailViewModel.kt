@@ -8,7 +8,7 @@ data class ProductDetailViewModel(
     val description: String,
     val platform: String,
     val price: String,
-    val previewUrl: String,
+    val previewUrls: List<String>,
     val isFavorite: Boolean,
     val isInWishlist: Boolean,
     val publishingTimeAndVisitsCount: String,

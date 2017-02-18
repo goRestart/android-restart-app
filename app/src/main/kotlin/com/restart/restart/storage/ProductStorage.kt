@@ -17,7 +17,11 @@ class ProductStorage {
                 "Consola nueva, muy entretenida. La vendo por que necesito el dinero. La volveré a comprar en un futuro.",
                 Platform.PS4,
                 5500,
-                "http://www.gamestop.com/common/images/lbox/127189b.jpg",
+                listOf(
+                    "http://www.gamestop.com/common/images/lbox/127189b.jpg",
+                    "http://www.gamestop.com/common/images/lbox/127189b.jpg",
+                    "http://www.gamestop.com/common/images/lbox/127189b.jpg"
+                ),
                 false,
                 false,
                 0,
@@ -34,7 +38,14 @@ class ProductStorage {
                 "Consola nueva, muy entretenida. La vendo por que necesito el dinero. La volveré a comprar en un futuro.",
                 Platform.PC,
                 9000,
-                "http://cdn02.nintendo-europe.com/media/images/10_share_images/others_3/H2x1_NintendoClassicMiniNES_Announcement.jpg",
+                listOf(
+                    "http://cdn02.nintendo-europe" +
+                        ".com/media/images/10_share_images/others_3/H2x1_NintendoClassicMiniNES_Announcement.jpg",
+                    "http://cdn02.nintendo-europe" +
+                        ".com/media/images/10_share_images/others_3/H2x1_NintendoClassicMiniNES_Announcement.jpg",
+                    "http://cdn02.nintendo-europe" +
+                        ".com/media/images/10_share_images/others_3/H2x1_NintendoClassicMiniNES_Announcement.jpg"
+                ),
                 false,
                 false,
                 0,
@@ -51,7 +62,11 @@ class ProductStorage {
                 "Consola nueva, muy entretenida. La vendo por que necesito el dinero. La volveré a comprar en un futuro.",
                 Platform.PS4,
                 3500,
-                "http://s2.n4g.com/news/1937839_0.jpg",
+                listOf(
+                    "http://s2.n4g.com/news/1937839_0.jpg",
+                    "http://s2.n4g.com/news/1937839_0.jpg",
+                    "http://s2.n4g.com/news/1937839_0.jpg"
+                ),
                 false,
                 false,
                 0,
