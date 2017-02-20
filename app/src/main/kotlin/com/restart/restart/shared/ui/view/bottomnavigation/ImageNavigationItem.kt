@@ -8,10 +8,9 @@ import com.restart.restart.shared.extensions.ui.setImageDrawable
 
 class ImageNavigationItem(context: Context, @DrawableRes val drawableRes: Int) : NavigationItem {
 
-    private val imageView: ImageView
+    private val imageView: ImageView = ImageView(context)
 
     init {
-        imageView = ImageView(context)
         imageView.setImageDrawable(drawableRes)
     }
 

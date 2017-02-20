@@ -66,6 +66,9 @@ class ProductActivity : RestartActivity(), ProductPresenter.View {
 
     private fun configureImagesPager() {
         view_pager.adapter = pagerAdapter
+        val pageMargin = resources.getDimension(R.dimen.product_image_page_margin).toInt()
+        view_pager.pageMargin = pageMargin
+        indicator.install(view_pager)
     }
 
     private fun configurePreview() {
@@ -102,11 +105,12 @@ class ImagesPagerAdapter(
             configureTransition(imageView)
         }
 
+        val cornerRadius = activity.resources.getDimension(R.dimen.product_image_corner_radius).toInt()
         Picasso.with(activity)
             .load(imageUrls[position])
             .fit()
             .centerCrop()
-            .transform(RoundedCornersTransformation(8, 0))
+            .transform(RoundedCornersTransformation(cornerRadius, 0))
             .into(imageView, object : Callback {
                 override fun onSuccess() = ActivityCompat.startPostponedEnterTransition(activity)
                 override fun onError() = ActivityCompat.startPostponedEnterTransition(activity)
