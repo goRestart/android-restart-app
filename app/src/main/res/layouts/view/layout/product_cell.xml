@@ -8,8 +8,8 @@
     android:orientation="vertical">
 
     <RelativeLayout
-        android:layout_width="@dimen/listing_ad_cell_image_container_width"
-        android:layout_height="@dimen/listing_ad_cell_image_container_height"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:background="@color/ivory">
 
         <ImageView

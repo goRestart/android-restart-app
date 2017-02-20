@@ -2,6 +2,7 @@ package com.restart.restart.listing.ui.view.viewmodel
 
 import android.app.Activity
 import android.content.Context
+import android.content.res.Resources
 import android.support.v4.app.ActivityCompat
 import android.support.v4.app.ActivityOptionsCompat
 import android.view.View
@@ -49,6 +50,17 @@ class ProductViewModel(
             .fit()
             .centerCrop()
             .into(preview)
+
+        configureSizes(holder)
+    }
+
+    private fun configureSizes(viewHolder: ViewHolder?) {
+        val params = viewHolder?.preview?.layoutParams
+        val imageSize = Resources.getSystem().displayMetrics.widthPixels / 2
+        params?.height = imageSize
+        params?.width = imageSize
+        viewHolder?.preview?.layoutParams = params
+        viewHolder?.preview?.postInvalidate()
     }
 
     class ViewHolder : EpoxyHolder() {
