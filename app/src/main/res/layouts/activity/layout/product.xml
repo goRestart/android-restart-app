@@ -139,16 +139,19 @@
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
                     android:layout_centerVertical="true"
-                    android:text="Ubicación"/>
+                    android:layout_toLeftOf="@+id/location_tag"
+                    android:layout_toStartOf="@+id/location_tag"
+                    android:text="@string/location_product_detail_button"/>
 
                 <TextView
+                    android:id="@+id/location_tag"
                     style="@style/Tag"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
-                    android:text="VER EN EL MAPA"/>
+                    android:text="@string/see_in_map_product_detail_button"/>
 
             </RelativeLayout>
 
@@ -170,16 +173,19 @@
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
                     android:layout_centerVertical="true"
-                    android:text="Vendedor"/>
+                    android:layout_toLeftOf="@+id/profile_tag"
+                    android:layout_toStartOf="@+id/profile_tag"
+                    android:text="@string/seller_title_product_detail_button"/>
 
                 <TextView
+                    android:id="@+id/profile_tag"
                     style="@style/Tag"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
-                    android:text="VER PERFIL"/>
+                    android:text="@string/see_profile_product_detail_button"/>
 
             </RelativeLayout>
 
