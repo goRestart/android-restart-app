@@ -28,4 +28,5 @@
     <dimen name="product_seller_details_margin_top">8dp</dimen>
     <dimen name="product_seller_avatar_size">80dp</dimen>
     <dimen name="product_seller_name_margin_left">10dp</dimen>
+    <dimen name="product_send_message_button_height">60dp</dimen>
 </resources>

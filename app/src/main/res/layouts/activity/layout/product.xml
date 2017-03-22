@@ -222,6 +222,12 @@
 
         </LinearLayout>
 
+        <Button
+            style="@style/PositiveButton"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/product_send_message_button_height"
+            android:text="@string/send_message_from_product_detail_button"
+            />
     </LinearLayout>
 
 </ScrollView>

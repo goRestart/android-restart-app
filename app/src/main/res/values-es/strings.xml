@@ -6,4 +6,5 @@
     <string name="listing_query_hint">Pokemon sol, Battlefield 1…</string>
     <string name="listing_distance_cell">A %1$s de ti</string>
     <string name="listing_filter_cell">FILTROS</string>
+    <string name="send_message_from_product_detail_button">ENVIAR MENSAJE</string>
 </resources>

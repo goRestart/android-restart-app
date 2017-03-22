@@ -76,4 +76,11 @@
         <item name="android:textStyle">normal</item>
     </style>
 
+    <style name="PositiveButton">
+        <item name="android:background">@drawable/button_background</item>
+        <item name="android:textColor">@color/ivory</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/narrow</item>
+    </style>
+
 </resources>
