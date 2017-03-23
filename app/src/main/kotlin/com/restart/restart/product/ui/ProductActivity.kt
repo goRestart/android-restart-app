@@ -6,6 +6,7 @@ import android.content.res.Resources
 import android.os.Bundle
 import android.support.v4.app.ActivityCompat
 import android.view.LayoutInflater
+import com.google.android.gms.maps.MapsInitializer
 import com.restart.restart.R
 import com.restart.restart.product.ui.viewmodel.ProductDetailViewModel
 import com.restart.restart.shared.ui.RestartActivity
@@ -33,7 +34,24 @@ class ProductActivity : RestartActivity(), ProductPresenter.View {
         setContentView(R.layout.product)
         configureImagesPager()
         configurePreview()
+        map.onCreate(savedInstanceState)
+        MapsInitializer.initialize(this)
         presenter?.onStart()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        map.onResume()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        map.onDestroy()
+    }
+
+    override fun onLowMemory() {
+        super.onLowMemory()
+        map.onLowMemory()
     }
 
     override fun showProduct(product: ProductDetailViewModel) {

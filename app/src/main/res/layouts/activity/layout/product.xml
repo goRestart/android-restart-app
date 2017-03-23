@@ -155,12 +155,18 @@
 
             </RelativeLayout>
 
-            <com.google.android.gms.maps.MapView
-                android:id="@+id/map"
+            <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/product_map_height"
                 android:layout_marginTop="@dimen/product_map_margin_top"
-                android:background="@color/ash"/>
+                android:background="@color/ash">
+
+                <com.google.android.gms.maps.MapView
+                    android:id="@+id/map"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+            </FrameLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
