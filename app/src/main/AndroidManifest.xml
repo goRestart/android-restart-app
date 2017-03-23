@@ -21,6 +21,11 @@
 
         <activity
             android:name=".product.ui.ProductActivity"/>
+
+        <!-- Google Maps Api Key -->
+        <meta-data
+            android:name="com.google.android.geo.AIzaSyDc4Rk3GFR5mW4TUjpg3T37QnZiGXVW05Y"
+            android:value="AIzaSyDc4Rk3GFR5mW4TUjpg3T37QnZiGXVW05Y"/>
     </application>
 
 </manifest>

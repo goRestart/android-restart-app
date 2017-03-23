@@ -14,6 +14,7 @@
     <dimen name="wishlist_product_icon_margin_right">18dp</dimen>
     <dimen name="favorite_product_icon_width">20dp</dimen>
     <dimen name="favorite_product_icon_height">18dp</dimen>
+    <dimen name="product_map_height">180dp</dimen>
     <dimen name="product_title_margin_top">4dp</dimen>
     <dimen name="product_description_margin_top">8dp</dimen>
     <dimen name="product_visitors_margin_top">16dp</dimen>
