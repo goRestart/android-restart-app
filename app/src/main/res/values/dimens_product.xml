@@ -15,6 +15,13 @@
     <dimen name="favorite_product_icon_width">20dp</dimen>
     <dimen name="favorite_product_icon_height">18dp</dimen>
     <dimen name="product_map_height">180dp</dimen>
+    <dimen name="product_map_corner_radius">8dp</dimen>
+    <dimen name="product_map_border_width">1dp</dimen>
+    <dimen name="product_location_tag_elevation">4dp</dimen>
+    <dimen name="product_location_tag_height">36dp</dimen>
+    <dimen name="product_location_tag_corner_radius">18dp</dimen>
+    <dimen name="product_location_tag_padding">16dp</dimen>
+    <dimen name="product_location_tag_icon_size">24dp</dimen>
     <dimen name="product_title_margin_top">4dp</dimen>
     <dimen name="product_description_margin_top">8dp</dimen>
     <dimen name="product_visitors_margin_top">16dp</dimen>

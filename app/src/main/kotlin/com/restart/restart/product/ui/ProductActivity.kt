@@ -5,6 +5,7 @@ import android.content.Intent
 import android.content.res.Resources
 import android.os.Bundle
 import android.support.v4.app.ActivityCompat
+import android.support.v4.view.ViewCompat
 import android.view.LayoutInflater
 import com.google.android.gms.maps.MapsInitializer
 import com.restart.restart.R
@@ -34,6 +35,7 @@ class ProductActivity : RestartActivity(), ProductPresenter.View {
         setContentView(R.layout.product)
         configureImagesPager()
         configurePreview()
+        ViewCompat.setElevation(map_tag, resources.getDimension(R.dimen.product_location_tag_elevation))
         map.onCreate(savedInstanceState)
         MapsInitializer.initialize(this)
         presenter?.onStart()

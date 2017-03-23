@@ -83,4 +83,11 @@
         <item name="android:textSize">@dimen/narrow</item>
     </style>
 
+    <style name="LocationTag">
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textSize">@dimen/regular</item>
+        <item name="android:textColor">@color/charcoal</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
 </resources>

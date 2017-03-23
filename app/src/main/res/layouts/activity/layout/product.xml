@@ -155,18 +155,47 @@
 
             </RelativeLayout>
 
-            <FrameLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/product_map_height"
                 android:layout_marginTop="@dimen/product_map_margin_top"
-                android:background="@color/ash">
+                android:background="@drawable/map_background"
+                android:padding="1dp">
 
-                <com.google.android.gms.maps.MapView
+                <com.restart.restart.product.ui.map.RoundedCornerMapView
                     android:id="@+id/map"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"/>
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"/>
 
-            </FrameLayout>
+                <LinearLayout
+                    android:id="@+id/map_tag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/product_location_tag_height"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/location_tag_background"
+                    android:orientation="horizontal"
+                    android:paddingEnd="@dimen/product_location_tag_padding"
+                    android:paddingLeft="@dimen/product_location_tag_padding"
+                    android:paddingRight="@dimen/product_location_tag_padding"
+                    android:paddingStart="@dimen/product_location_tag_padding">
+
+                    <ImageView
+                        android:layout_width="@dimen/product_location_tag_icon_size"
+                        android:layout_height="@dimen/product_location_tag_icon_size"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/location_tag_icon"/>
+
+                    <TextView
+                        style="@style/LocationTag"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="08028, Barcelona"
+                        />
+                </LinearLayout>
+
+            </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
