@@ -1,5 +1,6 @@
 # android-restart-app
 
 
-![app/screenshots/com.restart.restart.listing.ui.ListingFragmentScreenshotTest_shouldRenderAllItemsWhenThereAreSeveralItemsAvailable.png](app/screenshots/com.restart.restart.listing.ui.ListingFragmentScreenshotTest_shouldRenderAllItemsWhenThereAreSeveralItemsAvailable.png)
+![app/screenshots/com.restart.restart.listing.ui.ListingFragmentScreenshotTest_shouldRenderAllProductsWhenThereAreSeveralProductsAvailable.png](app/screenshots/com.restart.restart.listing.ui.ListingFragmentScreenshotTest_shouldRenderAllProductsWhenThereAreSeveralProductsAvailable.png)
 
+![app/screenshots/com.restart.restart.product.ui.ProductActivityScreenshotTest_shouldRenderProductWhenThereIsInformationAvailable.png](app/screenshots/com.restart.restart.product.ui.ProductActivityScreenshotTest_shouldRenderProductWhenThereIsInformationAvailable.png)
