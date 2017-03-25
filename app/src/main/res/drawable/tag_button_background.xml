@@ -1,8 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<shape xmlns:android="http://schemas.android.com/apk/res/android">
-    <corners android:radius="@dimen/listing_filter_cell_corner_radius"/>
-    <stroke
-        android:width="@dimen/listing_filter_cell_border_width"
-        android:color="@color/violet"/>
-    <solid android:color="@color/crystal_violet"/>
-</shape>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true">
+        <shape>
+            <corners android:radius="@dimen/listing_filter_cell_corner_radius"/>
+            <stroke
+                android:width="@dimen/listing_filter_cell_border_width"
+                android:color="@color/violet"/>
+            <solid android:color="@color/violet_15_alpha"/>
+        </shape>
+    </item>
+    <item>
+        <shape>
+            <corners android:radius="@dimen/listing_filter_cell_corner_radius"/>
+            <stroke
+                android:width="@dimen/listing_filter_cell_border_width"
+                android:color="@color/violet"/>
+            <solid android:color="@color/violet_05_alpha"/>
+        </shape>
+    </item>
+</selector>
