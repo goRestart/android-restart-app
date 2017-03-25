@@ -11,6 +11,8 @@ import com.google.android.gms.maps.MapsInitializer
 import com.restart.restart.R
 import com.restart.restart.product.ui.viewmodel.ProductDetailViewModel
 import com.restart.restart.shared.ui.RestartActivity
+import com.squareup.picasso.Picasso
+import jp.wasabeef.picasso.transformations.RoundedCornersTransformation
 import kotlinx.android.synthetic.main.product.*
 
 class ProductActivity : RestartActivity(), ProductPresenter.View {
@@ -35,9 +37,8 @@ class ProductActivity : RestartActivity(), ProductPresenter.View {
         setContentView(R.layout.product)
         configureImagesPager()
         configurePreview()
-        ViewCompat.setElevation(map_tag, resources.getDimension(R.dimen.product_location_tag_elevation))
-        map.onCreate(savedInstanceState)
-        MapsInitializer.initialize(this)
+        configureMap(savedInstanceState)
+        configureSellerAvatar()
         presenter?.onStart()
     }
 
@@ -86,6 +87,23 @@ class ProductActivity : RestartActivity(), ProductPresenter.View {
         val params = view_pager.layoutParams
         params.height = Resources.getSystem().displayMetrics.widthPixels - horizontalMargin.toInt()
         view_pager.layoutParams = params
+    }
+
+    private fun configureMap(savedInstanceState: Bundle?) {
+        ViewCompat.setElevation(map_tag, resources.getDimension(R.dimen.product_location_tag_elevation))
+        map.onCreate(savedInstanceState)
+        MapsInitializer.initialize(this)
+    }
+
+    private fun configureSellerAvatar() {
+        val cornerRadius = resources.getDimension(R.dimen.product_seller_avatar_corner_radius).toInt()
+        Picasso.with(this)
+            .load("https://randomurlnotworking.com/image.png")
+            .fit()
+            .centerCrop()
+            .placeholder(R.drawable.avatar_placeholder)
+            .transform(RoundedCornersTransformation(cornerRadius, 0))
+            .into(seller_avatar)
     }
 
     private fun inject() {
