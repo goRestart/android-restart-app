@@ -13,7 +13,7 @@ class ListingFragmentScreenshotTest {
         IntentsTestRule(MainActivity::class.java, true, false)
 
     @Test
-    fun shouldRenderAllItemsWhenThereAreSeveralItemsAvailable() {
+    fun shouldRenderAllProductsWhenThereAreSeveralProductsAvailable() {
         val activity = activityRule.launchActivity(null)
 
         Screenshot.snapActivity(activity).record()

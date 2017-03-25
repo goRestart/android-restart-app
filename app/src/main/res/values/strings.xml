@@ -1,7 +1,13 @@
 <resources>
+    <string name="product_image_transition_name">Product Image Transition Name</string>
     <string name="app_name">Restart</string>
     <string name="listing_title_cell">What are you looking for?</string>
     <string name="listing_query_hint">Pokemon sol, Battlefield 1…</string>
     <string name="listing_distance_cell">Within %1$s from you</string>
     <string name="listing_filter_cell">FILTERS</string>
+    <string name="see_profile_product_detail_button">SEE PROFILE</string>
+    <string name="location_product_detail_button">Location</string>
+    <string name="see_in_map_product_detail_button">SEE IN THE MAP</string>
+    <string name="seller_title_product_detail_button">Seller</string>
+    <string name="send_message_from_product_detail_button">SEND MESSAGE</string>
 </resources>

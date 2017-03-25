@@ -15,7 +15,7 @@ apply plugin: 'com.facebook.testing.screenshot'
 
 android {
     compileSdkVersion 25
-    buildToolsVersion "24.0.2"
+    buildToolsVersion '25.0.0'
     defaultConfig {
         applicationId "com.restart.restart"
         minSdkVersion 16
@@ -29,6 +29,9 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+    lintOptions {
+        abortOnError false
     }
     sourceSets {
         main {
@@ -53,8 +56,8 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
 
     // Compatibility
-    compile 'com.android.support:design:25.1.1'
-    compile 'com.android.support:appcompat-v7:25.1.1'
+    compile 'com.android.support:design:25.2.0'
+    compile 'com.android.support:appcompat-v7:25.2.0'
 
     // User Interface
     compile 'com.airbnb.android:epoxy:1.5.0'
@@ -70,9 +73,13 @@ dependencies {
 
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 
+    // Play Services
+    compile 'com.google.android.gms:play-services-maps:10.2.1'
+
     testCompile 'junit:junit:4.12'
     testCompile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     testCompile "org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version"
+    androidTestCompile 'com.android.support:support-annotations:25.2.0'
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
@@ -80,6 +87,7 @@ dependencies {
         exclude module: 'support-annotations'
         exclude module: 'recyclerview-v7'
         exclude module: 'support-v4'
+        exclude module: 'appcompat-v7'
     })
     androidTestCompile('com.android.support.test.espresso:espresso-intents:2.2.1')
 }

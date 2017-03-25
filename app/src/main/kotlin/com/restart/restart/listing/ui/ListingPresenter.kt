@@ -1,8 +1,11 @@
 package com.restart.restart.listing.ui
 
-import com.restart.restart.listing.domain.GetProducts
+import com.restart.restart.domain.usecase.GetProducts
 import com.restart.restart.listing.ui.view.viewmodel.ProductViewModel
 import com.restart.restart.listing.ui.view.viewmodel.ProductViewModelMapper
+import com.restart.restart.shared.extensions.ref.invoke
+import nl.komponents.kovenant.ui.failUi
+import nl.komponents.kovenant.ui.successUi
 import java.lang.ref.WeakReference
 
 class ListingPresenter(
@@ -12,11 +15,11 @@ class ListingPresenter(
 ) {
 
     fun onStart() {
-        getProducts.execute().success {
+        getProducts.execute() successUi {
             val viewModels = it.map { productMapper.map(it) }
-            view.get().showProducts(viewModels)
-        }.fail {
-            view.get().showError()
+            view()?.showProducts(viewModels)
+        } failUi {
+            view()?.showError()
         }
     }
 

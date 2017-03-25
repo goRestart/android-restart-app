@@ -11,9 +11,10 @@
     <dimen name="create_ad_navigation_icon_size">48dp</dimen>
     <dimen name="create_ad_navigation_icon_padding">12dp</dimen>
 
-    <dimen name="listing_padding_horizontal">16dp</dimen>
+    <dimen name="listing_padding_horizontal">8dp</dimen>
     <dimen name="listing_inner_padding_horizontal">4dp</dimen>
     <dimen name="listing_padding_bottom">16dp</dimen>
+    <dimen name="listing_item_margin_horizontal">8dp</dimen>
 
     <dimen name="listing_title_cell_margin_top">23dp</dimen>
     <dimen name="listing_title_cell_height">59dp</dimen>
@@ -24,8 +25,6 @@
     <dimen name="listing_distance_cell_height">60dp</dimen>
 
     <dimen name="listing_filter_cell_margin_left">12dp</dimen>
-    <dimen name="listing_filter_cell_padding_horizontal">12dp</dimen>
-    <dimen name="listing_filter_cell_padding_vertical">4dp</dimen>
     <dimen name="listing_filter_cell_corner_radius">4dp</dimen>
     <dimen name="listing_filter_cell_border_width">1dp</dimen>
 
@@ -36,11 +35,15 @@
     <dimen name="listing_ad_cell_image_height">160dp</dimen>
     <dimen name="listing_ad_cell_image_margin_bottom">0dp</dimen>
     <dimen name="listing_ad_cell_image_corner_radius">4dp</dimen>
-    <dimen name="listing_ad_cell_platform_tag_padding_vertical">3dp</dimen>
-    <dimen name="listing_ad_cell_platform_tag_padding_horizontal">6dp</dimen>
     <dimen name="listing_ad_cell_platform_tag_margin_left">-3dp</dimen>
     <dimen name="listing_ad_cell_platform_tag_margin_bottom">5dp</dimen>
     <dimen name="listing_ad_cell_platform_tag_corner_radius">2dp</dimen>
     <dimen name="listing_ad_cell_platform_tag_border_width">2dp</dimen>
     <dimen name="listing_ad_cell_title_margin_top">-2dp</dimen>
+
+    <dimen name="tag_padding_horizontal">12dp</dimen>
+    <dimen name="tag_padding_vertical">4dp</dimen>
+    
+    <dimen name="platform_tag_padding_horizontal">6dp</dimen>
+    <dimen name="platform_tag_padding_vertical">3dp</dimen>
 </resources>
