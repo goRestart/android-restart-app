@@ -57,6 +57,23 @@
         <item name="android:paddingRight">@dimen/tag_padding_horizontal</item>
     </style>
 
+    <style name="Button"/>
+
+    <style name="Button.Alt"/>
+
+    <style name="Button.Alt.Primary">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textSize">@dimen/narrow</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:background">@drawable/button_alt_small_primary</item>
+        <item name="android:textColor">@color/purplish_blue</item>
+        <item name="android:paddingTop">@dimen/button_alt_primary_padding_vertical</item>
+        <item name="android:paddingBottom">@dimen/button_alt_primary_padding_vertical</item>
+        <item name="android:paddingLeft">@dimen/button_alt_primary_padding_horizontal</item>
+        <item name="android:paddingRight">@dimen/button_alt_primary_padding_horizontal</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
     <style name="Platform">
         <item name="android:textColor">@color/rainy</item>
         <item name="android:fontFamily">sans-serif</item>

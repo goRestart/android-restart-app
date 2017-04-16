@@ -14,43 +14,57 @@
 
     <ImageView
         android:id="@+id/icon"
-        android:layout_width="67dp"
-        android:layout_height="80dp"
+        android:layout_width="@dimen/login_icon_width"
+        android:layout_height="@dimen/login_icon_height"
         android:layout_below="@id/toolbar"
         android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/login_icon_margin_vertical"
+        android:layout_marginTop="@dimen/login_icon_margin_vertical"
         android:src="@drawable/restart_logo"/>
 
     <EditText
         android:id="@+id/username"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
+        android:layout_height="@dimen/login_edit_text_height"
         android:layout_below="@id/icon"
-        android:hint="Username"
+        android:layout_marginEnd="@dimen/login_edit_text_margin_horizontal"
+        android:layout_marginLeft="@dimen/login_edit_text_margin_horizontal"
+        android:layout_marginRight="@dimen/login_edit_text_margin_horizontal"
+        android:layout_marginStart="@dimen/login_edit_text_margin_horizontal"
+        android:hint="@string/login_username_edit_text_hint"
         android:inputType="text"/>
 
     <EditText
         android:id="@+id/password"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
+        android:layout_height="@dimen/login_edit_text_height"
         android:layout_below="@id/username"
-        android:hint="Password"
+        android:layout_marginEnd="@dimen/login_edit_text_margin_horizontal"
+        android:layout_marginLeft="@dimen/login_edit_text_margin_horizontal"
+        android:layout_marginRight="@dimen/login_edit_text_margin_horizontal"
+        android:layout_marginStart="@dimen/login_edit_text_margin_horizontal"
+        android:layout_marginTop="@dimen/login_password_margin_top"
+        android:hint="@string/login_password_edit_text_hint"
         android:inputType="textPassword"/>
 
     <Button
         android:id="@+id/forgot_password"
+        style="@style/Button.Alt.Primary"
         android:layout_width="wrap_content"
-        android:layout_height="48dp"
+        android:layout_height="@dimen/login_forgot_password_height"
         android:layout_below="@id/password"
         android:layout_centerHorizontal="true"
         android:layout_gravity="center"
-        android:paddingBottom="12dp"
-        android:paddingTop="12dp"
+        android:layout_marginTop="@dimen/login_forgot_password_margin_top"
+        android:text="@string/login_forgot_password"
         />
 
     <Button
         android:id="@+id/login"
+        style="@style/PositiveButton"
         android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:layout_alignParentBottom="true"/>
+        android:layout_height="@dimen/login_button_height"
+        android:layout_alignParentBottom="true"
+        android:text="@string/login_button"/>
 
 </RelativeLayout>
