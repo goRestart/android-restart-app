@@ -16,7 +16,6 @@ class MainActivity : RestartActivity(), MainPresenter.View {
     var presenter: MainPresenter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        setTheme(R.style.AppTheme)
         super.onCreate(savedInstanceState)
         presenter = dependencyContainer!!.getMainPresenter(this)
         setContentView(R.layout.main)
