@@ -4,23 +4,23 @@
         <shape>
             <gradient
                 android:angle="180"
-                android:endColor="@color/dark_violet"
-                android:startColor="@color/darker_violet"
+                android:endColor="@color/dark_purplish_blue"
+                android:startColor="@color/darker_purplish_blue"
                 android:type="linear"
                 />
         </shape>
     </item>
     <item android:state_enabled="false">
         <shape>
-            <solid android:color="@color/dark_ash"/>
+            <solid android:color="@color/white_three"/>
         </shape>
     </item>
     <item>
         <shape>
             <gradient
                 android:angle="180"
-                android:endColor="@color/light_violet"
-                android:startColor="@color/violet"
+                android:endColor="@color/electric_purple"
+                android:startColor="@color/purplish_blue"
                 android:type="linear"
                 />
         </shape>

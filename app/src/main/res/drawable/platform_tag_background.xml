@@ -3,6 +3,6 @@
     <corners android:radius="@dimen/listing_ad_cell_platform_tag_corner_radius"/>
     <stroke
         android:width="@dimen/listing_ad_cell_platform_tag_border_width"
-        android:color="@color/ivory"/>
+        android:color="@color/white"/>
     <solid android:color="@color/ash"/>
 </shape>

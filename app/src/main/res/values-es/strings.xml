@@ -11,4 +11,8 @@
     <string name="see_in_map_product_detail_button">VER EN EL MAPA</string>
     <string name="seller_title_product_detail_button">Vendedor</string>
     <string name="send_message_from_product_detail_button">ENVIAR MENSAJE</string>
+    <string name="login_username_edit_text_hint">Usuario</string>
+    <string name="login_password_edit_text_hint">Contraseña</string>
+    <string name="login_forgot_password">Olvidé mi contraseña</string>
+    <string name="login_button">Entrar ➞</string>
 </resources>
