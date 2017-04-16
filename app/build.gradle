@@ -67,6 +67,7 @@ dependencies {
     compile 'com.airbnb.android:epoxy:1.5.0'
     compile 'com.squareup.picasso:picasso:2.5.2'
     compile 'jp.wasabeef:picasso-transformations:2.1.0'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
 
     // Promises
     compile 'nl.komponents.kovenant:kovenant-core:3.3.0'

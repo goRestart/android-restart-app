@@ -108,4 +108,10 @@
         <item name="android:textStyle">normal</item>
     </style>
 
+    <style name="Input">
+        <item name="colorControlNormal">@color/purplish_blue</item>
+        <item name="colorControlActivated">@color/purplish_blue</item>
+        <item name="colorControlHighlight">@color/purplish_blue</item>
+    </style>
+
 </resources>

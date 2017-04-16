@@ -12,7 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/SplashScreen">
         <activity
-            android:name=".login.ui.LoginActivity">
+            android:name=".login.ui.LoginActivity"
+            android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>

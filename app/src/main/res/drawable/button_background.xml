@@ -12,7 +12,7 @@
     </item>
     <item android:state_enabled="false">
         <shape>
-            <solid android:color="@color/white_three"/>
+            <solid android:color="@color/dark_grey"/>
         </shape>
     </item>
     <item>
