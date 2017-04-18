@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="ivory">#FFFFFF</color>
-    <color name="ebony">#000000</color>
-    <color name="charcoal">#202020</color>
-    <color name="light_ash">#F2F2F2</color>
+    <color name="black">#000000</color>
+    <color name="black_two">#212121</color>
+    <color name="white">#FFFFFF</color>
+    <color name="dark_grey">#E0E0E0</color>
+    <color name="white_five">#F2F2F2</color>
     <color name="ash">#EBEBEB</color>
-    <color name="dark_ash">#E0E0E0</color>
+    <color name="warm_grey">#757575</color>
     <color name="cloudy">#CECECE</color>
     <color name="rainy">#888888</color>
-    <color name="violet">#651FFF</color>
-    <color name="light_violet">#9F41FF</color>
+    <color name="purplish_blue">#651FFF</color>
+    <color name="electric_purple">#9F41FF</color>
 
-    <color name="violet_05_alpha">#0C651FFF</color>
-    <color name="violet_15_alpha">#26651FFF</color>
-    <color name="dark_violet">#6E2CB2</color>
-    <color name="darker_violet">#4615B2</color>
+    <color name="purplish_blue_05_alpha">#0C651FFF</color>
+    <color name="purplish_blue_10_alpha">#19651FFF</color>
+    <color name="purplish_blue_15_alpha">#26651FFF</color>
+    <color name="dark_purplish_blue">#6E2CB2</color>
+    <color name="darker_purplish_blue">#4615B2</color>
 </resources>

@@ -23,7 +23,7 @@ class DistanceFilterViewModel : EpoxyModelWithHolder<DistanceFilterViewModel.Vie
         val distanceView = holder?.distance ?: return
         configureDistanceText(distanceView)
 
-        val layoutParams = holder?.content?.layoutParams as? StaggeredGridLayoutManager.LayoutParams
+        val layoutParams = holder.content?.layoutParams as? StaggeredGridLayoutManager.LayoutParams
         layoutParams?.isFullSpan = true
     }
 

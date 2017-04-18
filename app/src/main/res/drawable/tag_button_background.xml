@@ -5,8 +5,8 @@
             <corners android:radius="@dimen/listing_filter_cell_corner_radius"/>
             <stroke
                 android:width="@dimen/listing_filter_cell_border_width"
-                android:color="@color/violet"/>
-            <solid android:color="@color/violet_15_alpha"/>
+                android:color="@color/purplish_blue"/>
+            <solid android:color="@color/purplish_blue_15_alpha"/>
         </shape>
     </item>
     <item>
@@ -14,8 +14,8 @@
             <corners android:radius="@dimen/listing_filter_cell_corner_radius"/>
             <stroke
                 android:width="@dimen/listing_filter_cell_border_width"
-                android:color="@color/violet"/>
-            <solid android:color="@color/violet_05_alpha"/>
+                android:color="@color/purplish_blue"/>
+            <solid android:color="@color/purplish_blue_05_alpha"/>
         </shape>
     </item>
 </selector>

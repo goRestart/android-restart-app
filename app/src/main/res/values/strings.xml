@@ -10,4 +10,8 @@
     <string name="see_in_map_product_detail_button">SEE IN THE MAP</string>
     <string name="seller_title_product_detail_button">Seller</string>
     <string name="send_message_from_product_detail_button">SEND MESSAGE</string>
+    <string name="login_username_edit_text_hint">Username</string>
+    <string name="login_password_edit_text_hint">Password</string>
+    <string name="login_forgot_password">Forgot password?</string>
+    <string name="login_button">Log in ➞</string>
 </resources>

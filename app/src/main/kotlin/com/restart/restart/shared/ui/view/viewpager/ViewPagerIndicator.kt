@@ -85,7 +85,7 @@ class ViewPagerIndicator :
         val transitionRectangleStart: Float
         val transitionRectangleEnd: Float
 
-        paint.color = context.resources.getColor(R.color.violet)
+        paint.color = context.resources.getColor(R.color.purplish_blue)
         if (offsetToNext < 0.5) {
             transitionRectangleStart = centerOfCircleAtPosition(sourceCirclePosition).x
             transitionRectangleEnd = transitionRectangleStart +

@@ -8,8 +8,8 @@
             <corners android:radius="@dimen/create_ad_navigation_icon_corner_radius"/>
             <gradient
                 android:angle="-90"
-                android:endColor="@color/violet"
-                android:startColor="@color/light_violet"
+                android:endColor="@color/purplish_blue"
+                android:startColor="@color/electric_purple"
                 android:type="linear"/>
         </shape>
     </item>

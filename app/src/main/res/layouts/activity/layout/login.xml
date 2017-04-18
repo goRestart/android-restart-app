@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:background="@color/white"/>
+
+    <android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="top">
+
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="@dimen/login_icon_width"
+            android:layout_height="@dimen/login_icon_height"
+            android:src="@drawable/restart_logo"
+            app:layout_constraintBottom_toTopOf="@+id/username"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"/>
+
+        <EditText
+            android:id="@+id/username"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/login_forgot_password_height"
+            android:layout_marginEnd="@dimen/login_edit_text_margin_horizontal"
+            android:layout_marginLeft="@dimen/login_edit_text_margin_horizontal"
+            android:layout_marginRight="@dimen/login_edit_text_margin_horizontal"
+            android:layout_marginStart="@dimen/login_edit_text_margin_horizontal"
+            android:layout_marginTop="@dimen/login_username_margin_top"
+            android:hint="@string/login_username_edit_text_hint"
+            android:inputType="text"
+            android:theme="@style/Input"
+            app:layout_constraintBottom_toTopOf="@+id/password"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/icon"/>
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/login_forgot_password_height"
+            android:layout_marginEnd="@dimen/login_edit_text_margin_horizontal"
+            android:layout_marginLeft="@dimen/login_edit_text_margin_horizontal"
+            android:layout_marginRight="@dimen/login_edit_text_margin_horizontal"
+            android:layout_marginStart="@dimen/login_edit_text_margin_horizontal"
+            android:layout_marginTop="@dimen/login_password_margin_top"
+            android:hint="@string/login_password_edit_text_hint"
+            android:inputType="textPassword"
+            android:theme="@style/Input"
+            app:layout_constraintBottom_toTopOf="@+id/forgot_password"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/username"/>
+
+        <Button
+            android:id="@+id/forgot_password"
+            style="@style/Button.Alt.Primary"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/login_forgot_password_height"
+            android:layout_marginTop="@dimen/login_forgot_password_margin_top"
+            android:text="@string/login_forgot_password"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/password"/>
+
+    </android.support.constraint.ConstraintLayout>
+
+    <Button
+        android:id="@+id/login"
+        style="@style/PositiveButton"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/login_button_height"
+        android:layout_gravity="bottom"
+        android:enabled="false"
+        android:text="@string/login_button"/>
+
+</FrameLayout>
