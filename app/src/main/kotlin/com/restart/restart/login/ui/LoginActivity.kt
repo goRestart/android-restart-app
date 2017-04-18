@@ -1,5 +1,7 @@
 package com.restart.restart.login.ui
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import com.restart.restart.R
 import com.restart.restart.shared.extensions.ui.textWatcher
@@ -7,6 +9,13 @@ import com.restart.restart.shared.ui.RestartActivity
 import kotlinx.android.synthetic.main.login.*
 
 class LoginActivity : RestartActivity(), LoginPresenter.View {
+
+    companion object {
+        fun intent(context: Context): Intent {
+            val intent = Intent(context, LoginActivity::class.java)
+            return intent
+        }
+    }
 
     private var presenter: LoginPresenter? = null
 
@@ -31,6 +40,10 @@ class LoginActivity : RestartActivity(), LoginPresenter.View {
 
     }
 
+    override fun close() {
+        finish()
+    }
+
     private fun inject() {
         presenter = dependencyContainer!!.login.getPresenter(this)
     }
@@ -40,5 +53,6 @@ class LoginActivity : RestartActivity(), LoginPresenter.View {
         supportActionBar?.setDisplayShowTitleEnabled(false)
         supportActionBar?.setHomeAsUpIndicator(R.drawable.action_bar_back_icon)
         toolbar.navigationIcon = resources.getDrawable(R.drawable.action_bar_back_icon)
+        toolbar.setNavigationOnClickListener { presenter?.didSelectToClose() }
     }
 }

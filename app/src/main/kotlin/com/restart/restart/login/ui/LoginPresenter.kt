@@ -19,6 +19,10 @@ class LoginPresenter(
         updateLoginButton()
     }
 
+    fun didSelectToClose() {
+        view.get()?.close()
+    }
+
     private fun updateLoginButton() {
         val isEnabled = username.isNotEmpty() && password.isNotEmpty()
         view.get()?.showLoginButtonEnabled(isEnabled)
@@ -27,5 +31,6 @@ class LoginPresenter(
     interface View {
         fun showLoginButtonEnabled(isEnabled: Boolean)
         fun showError()
+        fun close()
     }
 }

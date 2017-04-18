@@ -1,6 +1,7 @@
 package com.restart.restart.login.di
 
 import com.restart.restart.login.ui.LoginPresenter
+import com.restart.restart.login.ui.UnloggedUserPresenter
 import com.restart.restart.shared.di.DependencyContainer
 import java.lang.ref.WeakReference
 
@@ -13,4 +14,11 @@ class LoginContainer(
             WeakReference(view)
         )
     }
+
+    fun getUnloggedUserPresenter(view: UnloggedUserPresenter.View): UnloggedUserPresenter {
+        return UnloggedUserPresenter(
+            WeakReference(view)
+        )
+    }
+
 }
