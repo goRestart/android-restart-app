@@ -63,12 +63,19 @@
 
     <style name="Button.Alt">
         <item name="android:textSize">@dimen/regular</item>
-        <item name="android:background">@drawable/button_alt_primary</item>
-        <item name="android:textColor">@color/purplish_blue</item>
+        <item name="android:textStyle">bold</item>
         <item name="android:textAllCaps">true</item>
     </style>
 
-    <style name="Button.Alt.Primary"/>
+    <style name="Button.Alt.Primary">
+        <item name="android:background">@drawable/button_alt_primary</item>
+        <item name="android:textColor">@color/purplish_blue</item>
+    </style>
+
+    <style name="Button.Alt.Secondary">
+        <item name="android:background">@drawable/button_alt_secondary</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
 
     <style name="Button.Alt.Primary.Small">
         <item name="android:textSize">@dimen/narrow</item>

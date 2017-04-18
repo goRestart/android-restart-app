@@ -2,16 +2,14 @@
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
     <ImageView
         android:id="@+id/icon"
-        android:layout_width="66dp"
-        android:layout_height="80dp"
-        android:layout_marginBottom="16dp"
+        android:layout_width="@dimen/login_icon_width"
+        android:layout_height="@dimen/login_icon_height"
+        android:layout_marginBottom="@dimen/unlogged_user_icon_margin_bottom"
         android:src="@drawable/restart_logo"
         app:layout_constraintBottom_toTopOf="@+id/title"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -22,26 +20,23 @@
     <TextView
         android:id="@+id/title"
         style="@style/Header"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginRight="32dp"
-        android:layout_marginStart="32dp"
-        android:text="Únete a Restart Vuelve a sentir la ilusión"
+        android:layout_marginBottom="@dimen/unlogged_user_title_margin_bottom"
+        android:layout_marginEnd="@dimen/unlogged_user_title_margin_horizontal"
+        android:layout_marginLeft="@dimen/unlogged_user_title_margin_horizontal"
+        android:layout_marginRight="@dimen/unlogged_user_title_margin_horizontal"
+        android:layout_marginStart="@dimen/unlogged_user_title_margin_horizontal"
+        android:text="@string/unlogged_user_title"
         android:textAlignment="center"
         app:layout_constraintBottom_toTopOf="@+id/register_button"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/icon"
-        tools:layout_constraintLeft_creator="1"
-        tools:layout_constraintRight_creator="1"/>
+        app:layout_constraintTop_toBottomOf="@+id/icon"/>
 
     <Button
         android:id="@+id/register_button"
-        style="@style/Button.Alt"
+        style="@style/Button.Alt.Primary"
         android:layout_width="match_parent"
         android:layout_height="@dimen/unlogged_user_button_height"
         android:layout_marginBottom="@dimen/unlogged_user_button_margin_bottom"
@@ -57,7 +52,7 @@
 
     <Button
         android:id="@+id/login_button"
-        style="@style/Button.Alt"
+        style="@style/Button.Alt.Secondary"
         android:layout_width="match_parent"
         android:layout_height="@dimen/unlogged_user_button_height"
         android:layout_marginEnd="@dimen/unlogged_user_button_horizontal_margin"

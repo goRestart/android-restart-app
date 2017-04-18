@@ -9,8 +9,8 @@
                     <corners android:radius="@dimen/button_alt_primary_radius"/>
                     <stroke
                         android:width="@dimen/button_alt_border_width"
-                        android:color="@color/purplish_blue"/>
-                    <solid android:color="@color/purplish_blue_15_alpha"/>
+                        android:color="@color/warm_grey"/>
+                    <solid android:color="@android:color/transparent"/>
                 </shape>
             </item>
         </layer-list>
@@ -20,7 +20,10 @@
             <item>
                 <shape>
                     <corners android:radius="@dimen/button_alt_primary_radius"/>
-                    <solid android:color="@color/purplish_blue_10_alpha"/>
+                    <stroke
+                        android:width="@dimen/button_alt_border_width"
+                        android:color="@color/dark_grey"/>
+                    <solid android:color="@android:color/transparent"/>
                 </shape>
             </item>
         </layer-list>

@@ -14,6 +14,7 @@
     <string name="login_password_edit_text_hint">Password</string>
     <string name="login_forgot_password">Forgot password?</string>
     <string name="login_button">Log in ➞</string>
+    <string name="unlogged_user_title">Join Restart\nFeel that enthusiasm again</string>
     <string name="create_account_button">Create account ➞</string>
     <string name="already_have_account_button">Already have an account ➞</string>
 </resources>

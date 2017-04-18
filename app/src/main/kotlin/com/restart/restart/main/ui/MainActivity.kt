@@ -3,8 +3,8 @@ package com.restart.restart.main.ui
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import com.restart.restart.R
-import com.restart.restart.favorites.ui.FavoritesFragment
 import com.restart.restart.listing.ui.ListingFragment
+import com.restart.restart.login.ui.UnloggedUserFragment
 import com.restart.restart.messages.ui.MessagesFragment
 import com.restart.restart.profile.ui.ProfileFragment
 import com.restart.restart.shared.ui.RestartActivity
@@ -63,7 +63,7 @@ class MainActivity : RestartActivity(), MainPresenter.View {
     private fun fragmentByIndex(index: Int): Fragment? =
         when (index) {
             0 -> ListingFragment()
-            1 -> FavoritesFragment()
+            1 -> UnloggedUserFragment()
             3 -> MessagesFragment()
             4 -> ProfileFragment()
             else -> null
