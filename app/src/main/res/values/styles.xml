@@ -9,10 +9,9 @@
     </style>
 
     <style name="Title">
-        <item name="android:fontFamily">sans-serif</item>
+        <item name="fontPath">fonts/OpenSans-Bold.ttf</item>
         <item name="android:textSize">@dimen/title</item>
         <item name="android:textColor">@color/black</item>
-        <item name="android:textStyle">bold</item>
     </style>
 
     <style name="Subtitle">
@@ -23,7 +22,7 @@
     </style>
 
     <style name="Header">
-        <item name="android:fontFamily">sans-serif</item>
+        <item name="fontPath">fonts/OpenSans-Bold.ttf</item>
         <item name="android:textSize">@dimen/header</item>
         <item name="android:textColor">@color/black</item>
         <item name="android:textStyle">bold</item>
@@ -58,12 +57,11 @@
     </style>
 
     <style name="Button">
-        <item name="android:fontFamily">sans-serif</item>
     </style>
 
     <style name="Button.Alt">
+        <item name="fontPath">fonts/OpenSans-Bold.ttf</item>
         <item name="android:textSize">@dimen/regular</item>
-        <item name="android:textStyle">bold</item>
         <item name="android:textAllCaps">true</item>
     </style>
 
