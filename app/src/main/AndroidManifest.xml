@@ -11,6 +11,8 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/SplashScreen">
+
+        <activity android:name=".main.ui.MainActivity"/>
         <activity
             android:name=".login.ui.LoginActivity"
             android:windowSoftInputMode="adjustResize">
@@ -19,9 +21,7 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-
-        <activity
-            android:name=".product.ui.ProductActivity"/>
+        <activity android:name=".product.ui.ProductActivity"/>
 
         <!-- Google Maps Api Key -->
         <meta-data

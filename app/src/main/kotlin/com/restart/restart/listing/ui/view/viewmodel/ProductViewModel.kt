@@ -31,10 +31,10 @@ class ProductViewModel(
         val preview = holder?.preview ?: return
 
         val cornerRadius = preview.resources.getDimension(R.dimen.listing_ad_cell_image_corner_radius).toInt()
-        holder?.title?.text = title
-        holder?.platform?.text = platform
-        holder?.price?.text = price
-        holder?.content?.setOnClickListener({
+        holder.title?.text = title
+        holder.platform?.text = platform
+        holder.price?.text = price
+        holder.content?.setOnClickListener({
             val intent = ProductActivity.intent(context, id)
             val transitionName = context.getString(R.string.product_image_transition_name)
             val options = ActivityOptionsCompat.makeSceneTransitionAnimation(
