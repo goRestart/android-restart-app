@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="66dp"
+        android:layout_height="80dp"
+        android:layout_marginBottom="16dp"
+        android:src="@drawable/restart_logo"
+        app:layout_constraintBottom_toTopOf="@+id/title"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"/>
+
+    <TextView
+        android:id="@+id/title"
+        style="@style/Header"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginStart="32dp"
+        android:text="Únete a Restart Vuelve a sentir la ilusión"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/register_button"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/icon"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"/>
+
+    <Button
+        android:id="@+id/register_button"
+        style="@style/Button.Alt"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/unlogged_user_button_height"
+        android:layout_marginBottom="@dimen/unlogged_user_button_margin_bottom"
+        android:layout_marginEnd="@dimen/unlogged_user_button_horizontal_margin"
+        android:layout_marginLeft="@dimen/unlogged_user_button_horizontal_margin"
+        android:layout_marginRight="@dimen/unlogged_user_button_horizontal_margin"
+        android:layout_marginStart="@dimen/unlogged_user_button_horizontal_margin"
+        android:text="@string/create_account_button"
+        app:layout_constraintBottom_toTopOf="@+id/login_button"
+        app:layout_constraintLeft_toLeftOf="@+id/title"
+        app:layout_constraintRight_toRightOf="@+id/title"
+        app:layout_constraintTop_toBottomOf="@+id/title"/>
+
+    <Button
+        android:id="@+id/login_button"
+        style="@style/Button.Alt"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/unlogged_user_button_height"
+        android:layout_marginEnd="@dimen/unlogged_user_button_horizontal_margin"
+        android:layout_marginLeft="@dimen/unlogged_user_button_horizontal_margin"
+        android:layout_marginRight="@dimen/unlogged_user_button_horizontal_margin"
+        android:layout_marginStart="@dimen/unlogged_user_button_horizontal_margin"
+        android:text="@string/already_have_account_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@+id/register_button"
+        app:layout_constraintRight_toRightOf="@+id/register_button"
+        app:layout_constraintTop_toBottomOf="@+id/register_button"/>
+
+</android.support.constraint.ConstraintLayout>

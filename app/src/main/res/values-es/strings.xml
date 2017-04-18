@@ -15,4 +15,6 @@
     <string name="login_password_edit_text_hint">Contraseña</string>
     <string name="login_forgot_password">Olvidé mi contraseña</string>
     <string name="login_button">Entrar ➞</string>
+    <string name="create_account_button">Crear cuenta ➞</string>
+    <string name="already_have_account_button">Ya tengo una cuenta ➞</string>
 </resources>

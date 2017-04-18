@@ -3,12 +3,12 @@
     <item android:state_pressed="true">
         <layer-list>
             <item
-                android:bottom="@dimen/button_alt_small_primary_vertical_padding"
-                android:top="@dimen/button_alt_small_primary_vertical_padding">
+                android:bottom="@dimen/button_alt_primary_small_vertical_padding"
+                android:top="@dimen/button_alt_primary_small_vertical_padding">
                 <shape>
-                    <corners android:radius="@dimen/button_alt_small_primary_radius"/>
+                    <corners android:radius="@dimen/button_alt_primary_small_radius"/>
                     <stroke
-                        android:width="@dimen/button_alt_small_primary_border_width"
+                        android:width="@dimen/button_alt_primary_small_border_width"
                         android:color="@color/purplish_blue"/>
                     <solid android:color="@color/purplish_blue_15_alpha"/>
                 </shape>
@@ -18,10 +18,10 @@
     <item android:state_enabled="false">
         <layer-list>
             <item
-                android:bottom="@dimen/button_alt_small_primary_vertical_padding"
-                android:top="@dimen/button_alt_small_primary_vertical_padding">
+                android:bottom="@dimen/button_alt_primary_small_vertical_padding"
+                android:top="@dimen/button_alt_primary_small_vertical_padding">
                 <shape>
-                    <corners android:radius="@dimen/button_alt_small_primary_radius"/>
+                    <corners android:radius="@dimen/button_alt_primary_small_radius"/>
                     <solid android:color="@color/purplish_blue_10_alpha"/>
                 </shape>
             </item>

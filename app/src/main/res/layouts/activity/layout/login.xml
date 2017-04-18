@@ -66,7 +66,7 @@
 
         <Button
             android:id="@+id/forgot_password"
-            style="@style/Button.Alt.Primary"
+            style="@style/Button.Alt.Primary.Small"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/login_forgot_password_height"
             android:layout_marginTop="@dimen/login_forgot_password_margin_top"
@@ -80,7 +80,7 @@
 
     <Button
         android:id="@+id/login"
-        style="@style/PositiveButton"
+        style="@style/Button.FullWidth"
         android:layout_width="match_parent"
         android:layout_height="@dimen/login_button_height"
         android:layout_gravity="bottom"
