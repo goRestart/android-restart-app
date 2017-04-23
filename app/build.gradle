@@ -2,6 +2,7 @@ buildscript {
     repositories {
         mavenCentral()
         maven { url "https://jitpack.io" }
+        maven { url "https://jcenter.bintray.com" }
     }
     dependencies {
         classpath 'com.facebook.testing.screenshot:plugin:0.4.2'
@@ -77,6 +78,12 @@ dependencies {
     compile 'nl.komponents.kovenant:kovenant-jvm:3.3.0'
     compile 'nl.komponents.kovenant:kovenant-functional:3.3.0'
 
+    // Async/await
+    compile 'co.metalab.asyncawait:asyncawait:1.0.0'
+
+    // Functional programming
+    compile 'org.funktionale:funktionale-all:1.0.1'
+
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 
     // Play Services
@@ -100,4 +107,10 @@ dependencies {
 
 repositories {
     mavenCentral()
+}
+
+kotlin {
+    experimental {
+        coroutines "enable"
+    }
 }
