@@ -10,7 +10,7 @@ import uk.co.chrisjenx.calligraphy.CalligraphyConfig
 
 class RestartApplication : Application() {
 
-    val container: DependencyContainer = DependencyContainer()
+    val container: DependencyContainer = DependencyContainer(this)
 
     override fun onCreate() {
         super.onCreate()

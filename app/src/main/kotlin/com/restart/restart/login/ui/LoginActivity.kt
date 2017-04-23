@@ -25,11 +25,12 @@ class LoginActivity : RestartActivity(), LoginPresenter.View {
         setContentView(R.layout.login)
         configureActionBar()
         username.textWatcher {
-            afterTextChanged { username -> presenter?.didUpdateUsername(username.toString()) }
+            afterTextChanged { username -> presenter?.onUsernameUpdated(username.toString()) }
         }
         password.textWatcher {
-            afterTextChanged { password -> presenter?.didUpdatePassword(password.toString()) }
+            afterTextChanged { password -> presenter?.onPasswordUpdated(password.toString()) }
         }
+        login.setOnClickListener { presenter?.onLoginSelected() }
     }
 
     override fun showLoginButtonEnabled(isEnabled: Boolean) {
@@ -53,6 +54,6 @@ class LoginActivity : RestartActivity(), LoginPresenter.View {
         supportActionBar?.setDisplayShowTitleEnabled(false)
         supportActionBar?.setHomeAsUpIndicator(R.drawable.action_bar_back_icon)
         toolbar.navigationIcon = resources.getDrawable(R.drawable.action_bar_back_icon)
-        toolbar.setNavigationOnClickListener { presenter?.didSelectToClose() }
+        toolbar.setNavigationOnClickListener { presenter?.onCloseSelected() }
     }
 }

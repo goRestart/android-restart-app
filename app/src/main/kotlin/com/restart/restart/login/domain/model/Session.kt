@@ -5,9 +5,12 @@ import com.restart.restart.login.data.SessionTokenStorage
 import org.funktionale.either.Either
 
 class Session(
-    val dataSource: LoginDataSource,
-    val tokenStorage: SessionTokenStorage
+    private val dataSource: LoginDataSource,
+    private val tokenStorage: SessionTokenStorage
 ) {
+
+    var listeners: MutableList<Listener> = mutableListOf()
+
     val isLoggedIn: Boolean
         get() = tokenStorage.hasSessionToken
 
@@ -16,9 +19,15 @@ class Session(
         return when (result) {
             is Either.Right -> {
                 tokenStorage.store(result.right().get())
+                listeners.forEach { it.onUserLoggedIn() }
                 Either.right(Unit)
             }
-            is Either.Left -> Either.right(Unit)
+            is Either.Left -> Either.left(result.left().get())
         }
+    }
+
+    interface Listener {
+        fun onUserLoggedIn()
+        fun onUserLoggedOut()
     }
 }

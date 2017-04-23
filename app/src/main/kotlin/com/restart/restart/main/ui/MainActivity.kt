@@ -19,8 +19,13 @@ class MainActivity : RestartActivity(), MainPresenter.View {
         super.onCreate(savedInstanceState)
         presenter = dependencyContainer!!.getMainPresenter(this)
         setContentView(R.layout.main)
-        presenter?.onStart()
+        presenter?.onStarted()
         bottom_navigation_bar.onNavigationItemSelected = { onFragmentSelected(it) }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        presenter?.onStopped()
     }
 
     override fun addNavigationItems(icons: List<Int>) {

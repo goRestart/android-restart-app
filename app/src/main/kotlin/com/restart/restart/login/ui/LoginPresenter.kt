@@ -14,24 +14,24 @@ class LoginPresenter(
     private var username: String = ""
     private var password: String = ""
 
-    fun didUpdateUsername(username: String) {
+    fun onUsernameUpdated(username: String) {
         this.username = username
         updateLoginButton()
     }
 
-    fun didUpdatePassword(password: String) {
+    fun onPasswordUpdated(password: String) {
         this.password = password
         updateLoginButton()
     }
 
-    fun didSelectToLogin() {
+    fun onLoginSelected() {
         val credentials = Credentials(username, password)
         executor.execute(login, credentials)
-            .onSuccess { }
+            .onSuccess { view.get()?.close() }
             .onError { }
     }
 
-    fun didSelectToClose() {
+    fun onCloseSelected() {
         view.get()?.close()
     }
 

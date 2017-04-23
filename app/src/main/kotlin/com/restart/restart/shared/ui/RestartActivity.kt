@@ -16,7 +16,14 @@ open class RestartActivity : AppCompatActivity() {
         setTheme(R.style.AppTheme)
         super.onCreate(savedInstanceState)
         val application = application as RestartApplication
+        application.container.activityContext = this
         this.dependencyContainer = application.container
+    }
+
+    override fun onResume() {
+        super.onResume()
+        val application = application as RestartApplication
+        application.container.activityContext = this
     }
 
     override fun attachBaseContext(newBase: Context?) {

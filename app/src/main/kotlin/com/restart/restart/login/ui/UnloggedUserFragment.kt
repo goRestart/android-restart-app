@@ -19,9 +19,7 @@ class UnloggedUserFragment : RestartFragment(), UnloggedUserPresenter.View {
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         inject()
-        login_button.setOnClickListener {
-            presenter?.didSelectToLogIn()
-        }
+        login_button.setOnClickListener { presenter?.onLoginSelected() }
     }
 
     override fun navigateToLogin() {

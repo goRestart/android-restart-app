@@ -6,7 +6,7 @@ class UnloggedUserPresenter(
     private val view: WeakReference<UnloggedUserPresenter.View>
 ) {
 
-    fun didSelectToLogIn() {
+    fun onLoginSelected() {
         view.get()?.navigateToLogin()
     }
 
