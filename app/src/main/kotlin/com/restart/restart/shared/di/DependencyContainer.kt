@@ -29,6 +29,7 @@ class DependencyContainer {
     fun getMainPresenter(view: MainPresenter.View): MainPresenter {
         return MainPresenter(
             WeakReference(view),
+            login.isLoggedIn,
             login.subscribeToSession,
             login.unsubscribeFromSession
         )

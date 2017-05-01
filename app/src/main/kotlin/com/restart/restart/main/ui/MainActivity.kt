@@ -3,6 +3,7 @@ package com.restart.restart.main.ui
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import com.restart.restart.R
+import com.restart.restart.favorites.ui.FavoritesFragment
 import com.restart.restart.listing.ui.ListingFragment
 import com.restart.restart.login.ui.UnloggedUserFragment
 import com.restart.restart.messages.ui.MessagesFragment
@@ -33,8 +34,8 @@ class MainActivity : RestartActivity(), MainPresenter.View {
         bottom_navigation_bar.configure(navigationItems)
     }
 
-    override fun moveToFragment(index: Int) {
-        val fragment = fragmentByIndex(index) ?: return
+    override fun moveToScreen(screen: MainPresenter.Screen) {
+        val fragment = fragmentForScreen(screen)
 
         if (fragment_container.childCount == 0) {
             setFragment(fragment)
@@ -42,11 +43,13 @@ class MainActivity : RestartActivity(), MainPresenter.View {
             moveToFragment(fragment)
         }
 
+        val index = indexToScreens.toList().first { it.second == screen }.first
         bottom_navigation_bar.select(index)
     }
 
     private fun onFragmentSelected(index: Int) {
-        presenter?.onItemSelected(index)
+        val screen = indexToScreens[index] ?: return
+        presenter?.onScreenSelected(screen)
     }
 
     private fun setFragment(fragment: Fragment) {
@@ -65,12 +68,19 @@ class MainActivity : RestartActivity(), MainPresenter.View {
             .commit()
     }
 
-    private fun fragmentByIndex(index: Int): Fragment? =
-        when (index) {
-            0 -> ListingFragment()
-            1 -> UnloggedUserFragment()
-            3 -> MessagesFragment()
-            4 -> ProfileFragment()
-            else -> null
+    private fun fragmentForScreen(screen: MainPresenter.Screen): Fragment =
+        when (screen) {
+            is MainPresenter.Screen.Listing -> ListingFragment()
+            is MainPresenter.Screen.Favorites -> FavoritesFragment()
+            is MainPresenter.Screen.Messages -> MessagesFragment()
+            is MainPresenter.Screen.Profile -> ProfileFragment()
+            is MainPresenter.Screen.Login -> UnloggedUserFragment()
         }
+
+    val indexToScreens: Map<Int, MainPresenter.Screen> = mapOf(
+        0 to MainPresenter.Screen.Listing,
+        1 to MainPresenter.Screen.Favorites,
+        2 to MainPresenter.Screen.Messages,
+        3 to MainPresenter.Screen.Profile
+    )
 }

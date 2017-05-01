@@ -3,6 +3,7 @@ package com.restart.restart.login.di
 import com.restart.restart.login.data.LoginDataSource
 import com.restart.restart.login.data.SessionTokenStorage
 import com.restart.restart.login.domain.model.Session
+import com.restart.restart.login.domain.usecase.IsLoggedIn
 import com.restart.restart.login.domain.usecase.Login
 import com.restart.restart.login.domain.usecase.SubscribeToSession
 import com.restart.restart.login.domain.usecase.UnsubscribeFromSession
@@ -29,6 +30,9 @@ open class LoginContainer(
 
     open val login: Login
         get() = Login(session)
+
+    open val isLoggedIn: IsLoggedIn
+        get() = IsLoggedIn(session)
 
     open val subscribeToSession: SubscribeToSession
         get() = SubscribeToSession(session)
