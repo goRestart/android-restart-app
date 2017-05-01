@@ -43,9 +43,15 @@ class MainActivity : RestartActivity(), MainPresenter.View {
             moveToFragment(fragment)
         }
 
-        val index = indexToScreens.toList().first { it.second == screen }.first
+        val index = indexOfScreen(screen)
         bottom_navigation_bar.select(index)
     }
+
+    private fun indexOfScreen(screen: MainPresenter.Screen) =
+        when (screen) {
+            is MainPresenter.Screen.Login -> indexToScreens.toList().first { it.second == screen.onScreen }.first
+            else -> indexToScreens.toList().first { it.second == screen }.first
+        }
 
     private fun onFragmentSelected(index: Int) {
         val screen = indexToScreens[index] ?: return
@@ -80,7 +86,7 @@ class MainActivity : RestartActivity(), MainPresenter.View {
     val indexToScreens: Map<Int, MainPresenter.Screen> = mapOf(
         0 to MainPresenter.Screen.Listing,
         1 to MainPresenter.Screen.Favorites,
-        2 to MainPresenter.Screen.Messages,
-        3 to MainPresenter.Screen.Profile
+        3 to MainPresenter.Screen.Messages,
+        4 to MainPresenter.Screen.Profile
     )
 }

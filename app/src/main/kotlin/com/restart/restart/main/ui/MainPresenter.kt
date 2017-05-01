@@ -66,7 +66,7 @@ class MainPresenter(
     }
 
     private fun displayedScreenForScreen(screen: Screen): Screen {
-        val isListing = screen != Screen.Listing
+        val isListing = screen == Screen.Listing
         val isLoggedIn = isLoggedIn.execute()
         return if (!isListing && !isLoggedIn) {
             Screen.Login(screen)

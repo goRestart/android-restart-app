@@ -26,8 +26,13 @@ class Session(
         }
     }
 
+    fun logout() {
+        tokenStorage.clean()
+        listeners.forEach { it.onUserLoggedOut() }
+    }
+
     fun subscribe(listener: Listener) {
-       listeners.add(listener)
+        listeners.add(listener)
     }
 
     fun unsubscribe(listener: Listener) {
