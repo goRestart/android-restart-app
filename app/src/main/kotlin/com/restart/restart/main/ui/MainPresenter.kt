@@ -2,17 +2,16 @@ package com.restart.restart.main.ui
 
 import com.restart.restart.R
 import com.restart.restart.login.domain.model.Session
-import com.restart.restart.login.domain.usecase.SubscribeToLoggedIn
-import com.restart.restart.login.domain.usecase.UnsubscribeToLoggedIn
-import com.restart.restart.shared.domain.UseCaseExecutor
+import com.restart.restart.login.domain.usecase.SubscribeToSession
+import com.restart.restart.login.domain.usecase.UnsubscribeFromSession
 import java.lang.ref.WeakReference
 
 class MainPresenter(
     private val view: WeakReference<View>,
-    private val subscribeToLoggedIn: SubscribeToLoggedIn,
-    private val unsubscribeToLoggedIn: UnsubscribeToLoggedIn,
-    private val useCaseExecutor: UseCaseExecutor
+    private val subscribeToSession: SubscribeToSession,
+    private val unsubscribeFromLoggedIn: UnsubscribeFromSession
 ) : Session.Listener {
+
     interface View {
         fun addNavigationItems(icons: List<Int>)
         fun moveToFragment(index: Int)
@@ -29,11 +28,11 @@ class MainPresenter(
             )
         )
         view.get()?.moveToFragment(0)
-        useCaseExecutor.execute(subscribeToLoggedIn, this)
+        subscribeToSession.execute(this)
     }
 
     fun onStopped() {
-        useCaseExecutor.execute(unsubscribeToLoggedIn, this)
+        unsubscribeFromLoggedIn.execute(this)
     }
 
     fun onItemSelected(index: Int) {

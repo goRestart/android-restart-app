@@ -1,14 +1,15 @@
 package com.restart.restart.login.ui
 
+import co.metalab.asyncawait.async
 import com.restart.restart.login.domain.model.Credentials
 import com.restart.restart.login.domain.usecase.Login
-import com.restart.restart.shared.domain.UseCaseExecutor
+import com.restart.restart.shared.extensions.funktionale.onLeft
+import com.restart.restart.shared.extensions.funktionale.onRight
 import java.lang.ref.WeakReference
 
 class LoginPresenter(
     private val view: WeakReference<View>,
-    private val login: Login,
-    private val executor: UseCaseExecutor
+    private val login: Login
 ) {
 
     private var username: String = ""
@@ -24,11 +25,12 @@ class LoginPresenter(
         updateLoginButton()
     }
 
-    fun onLoginSelected() {
+    fun onLoginSelected() = async {
         val credentials = Credentials(username, password)
-        executor.execute(login, credentials)
-            .onSuccess { view.get()?.close() }
-            .onError { }
+        val result = await { login.execute(credentials) }
+        result
+            .onLeft { view.get()?.close() }
+            .onRight {  }
     }
 
     fun onCloseSelected() {

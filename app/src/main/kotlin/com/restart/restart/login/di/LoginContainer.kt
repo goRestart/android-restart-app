@@ -4,6 +4,8 @@ import com.restart.restart.login.data.LoginDataSource
 import com.restart.restart.login.data.SessionTokenStorage
 import com.restart.restart.login.domain.model.Session
 import com.restart.restart.login.domain.usecase.Login
+import com.restart.restart.login.domain.usecase.SubscribeToSession
+import com.restart.restart.login.domain.usecase.UnsubscribeFromSession
 import com.restart.restart.login.ui.LoginPresenter
 import com.restart.restart.login.ui.UnloggedUserPresenter
 import com.restart.restart.shared.di.DependencyContainer
@@ -15,8 +17,7 @@ open class LoginContainer(
     open fun getPresenter(view: LoginPresenter.View): LoginPresenter {
         return LoginPresenter(
             WeakReference(view),
-            login,
-            dependencyContainer.useCaseExecutor
+            login
         )
     }
 
@@ -28,6 +29,12 @@ open class LoginContainer(
 
     open val login: Login
         get() = Login(session)
+
+    open val subscribeToSession: SubscribeToSession
+        get() = SubscribeToSession(session)
+
+    open val unsubscribeFromSession: UnsubscribeFromSession
+        get() = UnsubscribeFromSession(session)
 
     open val session: Session
         get() = Session(

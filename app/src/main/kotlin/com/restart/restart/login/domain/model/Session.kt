@@ -9,7 +9,7 @@ class Session(
     private val tokenStorage: SessionTokenStorage
 ) {
 
-    var listeners: MutableList<Listener> = mutableListOf()
+    private var listeners: MutableList<Listener> = mutableListOf()
 
     val isLoggedIn: Boolean
         get() = tokenStorage.hasSessionToken
@@ -24,6 +24,14 @@ class Session(
             }
             is Either.Left -> Either.left(result.left().get())
         }
+    }
+
+    fun subscribe(listener: Listener) {
+       listeners.add(listener)
+    }
+
+    fun unsubscribe(listener: Listener) {
+        listeners.remove(listener)
     }
 
     interface Listener {

@@ -2,10 +2,10 @@ package com.restart.restart.login.domain.usecase
 
 import com.restart.restart.login.domain.model.Session
 
-class IsLoggedIn(
+class SubscribeToSession(
     private val session: Session
 ) {
-    fun execute(): Boolean {
-        return session.isLoggedIn
+    fun execute(listener: Session.Listener) {
+        session.subscribe(listener)
     }
 }
