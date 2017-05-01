@@ -14,6 +14,8 @@ class MainPresenter(
     private val unsubscribeFromLoggedIn: UnsubscribeFromSession
 ) : Session.Listener {
 
+    private var currentScreen: Screen = Screen.Listing
+
     interface View {
         fun addNavigationItems(icons: List<Int>)
         fun moveToScreen(screen: Screen)
@@ -29,7 +31,7 @@ class MainPresenter(
                 R.drawable.profile_navigation_icon
             )
         )
-        view.get()?.moveToScreen(Screen.Listing)
+        view.get()?.moveToScreen(currentScreen)
         subscribeToSession.execute(this)
     }
 
@@ -38,16 +40,29 @@ class MainPresenter(
     }
 
     fun onScreenSelected(screen: Screen) {
-        val displayedScreen = displayedScreenForScreen(screen)
-        view.get()?.moveToScreen(displayedScreen)
+        showScreen(screen)
     }
 
     override fun onUserLoggedIn() {
-
+        val screen = currentScreen
+        when (screen) {
+            is Screen.Login -> showScreen(screen.onScreen)
+            else -> return
+        }
     }
 
     override fun onUserLoggedOut() {
+        val screen = currentScreen
+        when (screen) {
+            !is Screen.Login -> showScreen(Screen.Login(screen))
+            else -> return
+        }
+    }
 
+    private fun showScreen(screen: Screen) {
+        val displayedScreen = displayedScreenForScreen(screen)
+        view.get()?.moveToScreen(displayedScreen)
+        currentScreen = displayedScreen
     }
 
     private fun displayedScreenForScreen(screen: Screen): Screen {
