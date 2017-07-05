@@ -27,5 +27,4 @@ class ListingPresenter(
         fun showProducts(products: List<ProductViewModel>)
         fun showError()
     }
-
 }

@@ -1,22 +1,40 @@
 package com.restart.restart.login.ui
 
+import co.metalab.asyncawait.async
+import com.restart.restart.login.domain.model.Credentials
+import com.restart.restart.login.domain.usecase.Login
+import com.restart.restart.shared.extensions.funktionale.onLeft
+import com.restart.restart.shared.extensions.funktionale.onRight
 import java.lang.ref.WeakReference
 
 class LoginPresenter(
-    private val view: WeakReference<View>
+    private val view: WeakReference<View>,
+    private val login: Login
 ) {
 
     private var username: String = ""
     private var password: String = ""
 
-    fun didUpdateUsername(username: String) {
+    fun onUsernameUpdated(username: String) {
         this.username = username
         updateLoginButton()
     }
 
-    fun didUpdatePassword(password: String) {
+    fun onPasswordUpdated(password: String) {
         this.password = password
         updateLoginButton()
+    }
+
+    fun onLoginSelected() = async {
+        val credentials = Credentials(username, password)
+        val result = await { login.execute(credentials) }
+        result
+            .onLeft { }
+            .onRight { view.get()?.close() }
+    }
+
+    fun onCloseSelected() {
+        view.get()?.close()
     }
 
     private fun updateLoginButton() {
@@ -27,5 +45,6 @@ class LoginPresenter(
     interface View {
         fun showLoginButtonEnabled(isEnabled: Boolean)
         fun showError()
+        fun close()
     }
 }

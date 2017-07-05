@@ -2,7 +2,10 @@
 <resources>
     <dimen name="button_alt_primary_padding_horizontal">9dp</dimen>
     <dimen name="button_alt_primary_padding_vertical">4dp</dimen>
-    <dimen name="button_alt_small_primary_border_width">1dp</dimen>
-    <dimen name="button_alt_small_primary_radius">4dp</dimen>
-    <dimen name="button_alt_small_primary_vertical_padding">12dp</dimen>
+    <dimen name="button_alt_border_width">2dp</dimen>
+    <dimen name="button_alt_primary_horizontal_padding">8dp</dimen>
+    <dimen name="button_alt_primary_small_border_width">1dp</dimen>
+    <dimen name="button_alt_primary_radius">8dp</dimen>
+    <dimen name="button_alt_primary_small_radius">4dp</dimen>
+    <dimen name="button_alt_primary_small_vertical_padding">12dp</dimen>
 </resources>

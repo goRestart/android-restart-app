@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="unlogged_user_content_padding_bottom">48dp</dimen>
+    <dimen name="unlogged_user_icon_margin_bottom">16dp</dimen>
+    <dimen name="unlogged_user_title_margin_bottom">24dp</dimen>
+    <dimen name="unlogged_user_title_margin_horizontal">32dp</dimen>
+    <dimen name="unlogged_user_button_height">48dp</dimen>
+    <dimen name="unlogged_user_button_horizontal_margin">48dp</dimen>
+    <dimen name="unlogged_user_button_margin_bottom">8dp</dimen>
+</resources>
