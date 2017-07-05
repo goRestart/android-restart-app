@@ -6,11 +6,9 @@ import org.funktionale.either.Either
 
 class Session(
     private val dataSource: LoginDataSource,
-    private val tokenStorage: SessionTokenStorage
+    private val tokenStorage: SessionTokenStorage,
+    private val broadcast: SessionBroadcast
 ) {
-
-    private var listeners: MutableList<Listener> = mutableListOf()
-
     val isLoggedIn: Boolean
         get() = tokenStorage.hasSessionToken
 
@@ -19,7 +17,7 @@ class Session(
         return when (result) {
             is Either.Right -> {
                 tokenStorage.store(result.right().get())
-                listeners.forEach { it.onUserLoggedIn() }
+                broadcast.notifyUserLoggedIn()
                 Either.right(Unit)
             }
             is Either.Left -> Either.left(result.left().get())
@@ -28,19 +26,14 @@ class Session(
 
     fun logout() {
         tokenStorage.clean()
-        listeners.forEach { it.onUserLoggedOut() }
+        broadcast.notifyUserLoggedOut()
     }
 
-    fun subscribe(listener: Listener) {
-        listeners.add(listener)
+    fun subscribe(listener: SessionBroadcast.Listener) {
+        broadcast.subscribe(listener)
     }
 
-    fun unsubscribe(listener: Listener) {
-        listeners.remove(listener)
-    }
-
-    interface Listener {
-        fun onUserLoggedIn()
-        fun onUserLoggedOut()
+    fun unsubscribe(listener: SessionBroadcast.Listener) {
+        broadcast.unsubscribe(listener)
     }
 }

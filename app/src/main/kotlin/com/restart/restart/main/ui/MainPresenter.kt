@@ -1,7 +1,7 @@
 package com.restart.restart.main.ui
 
 import com.restart.restart.R
-import com.restart.restart.login.domain.model.Session
+import com.restart.restart.login.domain.model.SessionBroadcast
 import com.restart.restart.login.domain.usecase.IsLoggedIn
 import com.restart.restart.login.domain.usecase.SubscribeToSession
 import com.restart.restart.login.domain.usecase.UnsubscribeFromSession
@@ -12,7 +12,7 @@ class MainPresenter(
     private val isLoggedIn: IsLoggedIn,
     private val subscribeToSession: SubscribeToSession,
     private val unsubscribeFromLoggedIn: UnsubscribeFromSession
-) : Session.Listener {
+) : SessionBroadcast.Listener {
 
     private var currentScreen: Screen = Screen.Listing
 
@@ -44,6 +44,7 @@ class MainPresenter(
     }
 
     override fun onUserLoggedIn() {
+        print("ON USER LOGGED IN")
         val screen = currentScreen
         when (screen) {
             is Screen.Login -> showScreen(screen.onScreen)
@@ -52,9 +53,10 @@ class MainPresenter(
     }
 
     override fun onUserLoggedOut() {
+        print("ON USER LOGGED OUT")
         val screen = currentScreen
         when (screen) {
-            !is Screen.Login -> showScreen(Screen.Login(screen))
+            !is Screen.Login -> showScreen(screen)
             else -> return
         }
     }

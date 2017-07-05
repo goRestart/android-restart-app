@@ -29,8 +29,8 @@ class LoginPresenter(
         val credentials = Credentials(username, password)
         val result = await { login.execute(credentials) }
         result
-            .onLeft { view.get()?.close() }
-            .onRight {  }
+            .onLeft { }
+            .onRight { view.get()?.close() }
     }
 
     fun onCloseSelected() {

@@ -29,6 +29,8 @@ class MainActivity : RestartActivity(), MainPresenter.View {
         presenter?.onStopped()
     }
 
+    override fun onSaveInstanceState(outState: Bundle?) {}
+
     override fun addNavigationItems(icons: List<Int>) {
         val navigationItems = icons.map { ImageNavigationItem(this, it) }
         bottom_navigation_bar.configure(navigationItems)
@@ -71,7 +73,7 @@ class MainActivity : RestartActivity(), MainPresenter.View {
             .setCustomAnimations(R.anim.fragment_fade_in, R.anim.fragment_fade_out)
             .replace(R.id.fragment_container, fragment)
             .addToBackStack(null)
-            .commit()
+            .commitAllowingStateLoss()
     }
 
     private fun fragmentForScreen(screen: MainPresenter.Screen): Fragment =

@@ -17,14 +17,17 @@ class DependencyContainer {
     val context: Context
         get() = activityContext!!
 
-    val listing: ListingContainer
-        get() = ListingContainer(this)
+    val listing: ListingContainer by lazy {
+        ListingContainer(this)
+    }
 
-    val product: ProductContainer
-        get() = ProductContainer(this)
+    val product: ProductContainer by lazy {
+        ProductContainer(this)
+    }
 
-    val login: LoginContainer
-        get() = LoginContainer(this)
+    val login: LoginContainer by lazy {
+        LoginContainer(this)
+    }
 
     fun getMainPresenter(view: MainPresenter.View): MainPresenter {
         return MainPresenter(

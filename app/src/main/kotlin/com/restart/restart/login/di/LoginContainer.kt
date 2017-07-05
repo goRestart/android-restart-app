@@ -3,6 +3,7 @@ package com.restart.restart.login.di
 import com.restart.restart.login.data.LoginDataSource
 import com.restart.restart.login.data.SessionTokenStorage
 import com.restart.restart.login.domain.model.Session
+import com.restart.restart.login.domain.model.SessionBroadcast
 import com.restart.restart.login.domain.usecase.*
 import com.restart.restart.login.ui.LoginPresenter
 import com.restart.restart.login.ui.UnloggedUserPresenter
@@ -43,7 +44,8 @@ open class LoginContainer(
     open val session: Session
         get() = Session(
             loginDataSource,
-            sessionTokenStorage
+            sessionTokenStorage,
+            sessionBroadcast
         )
 
     open val loginDataSource: LoginDataSource
@@ -51,4 +53,8 @@ open class LoginContainer(
 
     open val sessionTokenStorage: SessionTokenStorage
         get() = SessionTokenStorage(dependencyContainer.sharedPreferences)
+
+    open val sessionBroadcast: SessionBroadcast by lazy {
+        SessionBroadcast()
+    }
 }
