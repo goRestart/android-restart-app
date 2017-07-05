@@ -7,4 +7,5 @@
     <dimen name="unlogged_user_button_height">48dp</dimen>
     <dimen name="unlogged_user_button_horizontal_margin">48dp</dimen>
     <dimen name="unlogged_user_button_margin_bottom">8dp</dimen>
+    <dimen name="unlogged_user_button_horizontal_padding">4dp</dimen>
 </resources>

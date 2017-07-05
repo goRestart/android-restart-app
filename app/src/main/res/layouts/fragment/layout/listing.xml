@@ -14,4 +14,16 @@
         android:isScrollContainer="false"
         />
 
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="92dp"
+        android:clipToPadding="false"
+        android:padding="20dp">
+
+        <include layout="@layout/distance_pill"/>
+
+    </FrameLayout>
+
 </FrameLayout>

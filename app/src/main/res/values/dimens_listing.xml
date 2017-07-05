@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="listing_padding_horizontal">8dp</dimen>
+    <dimen name="listing_inner_padding_horizontal">4dp</dimen>
+    <dimen name="listing_padding_bottom">16dp</dimen>
+    <dimen name="listing_item_margin_horizontal">8dp</dimen>
+
+    <dimen name="listing_title_cell_margin_top">23dp</dimen>
+    <dimen name="listing_title_cell_height">59dp</dimen>
+
+    <dimen name="listing_search_cell_margin_top">8dp</dimen>
+    <dimen name="listing_search_cell_height">48dp</dimen>
+
+    <dimen name="listing_distance_cell_height">60dp</dimen>
+
+    <dimen name="listing_filter_cell_margin_left">12dp</dimen>
+    <dimen name="listing_filter_cell_corner_radius">4dp</dimen>
+    <dimen name="listing_filter_cell_border_width">1dp</dimen>
+
+    <dimen name="listing_ad_cell_margin_bottom">8dp</dimen>
+    <dimen name="listing_ad_cell_margin_top">8dp</dimen>
+    <dimen name="listing_ad_cell_image_container_width">160dp</dimen>
+    <dimen name="listing_ad_cell_image_container_height">170dp</dimen>
+    <dimen name="listing_ad_cell_image_height">160dp</dimen>
+    <dimen name="listing_ad_cell_image_margin_bottom">0dp</dimen>
+    <dimen name="listing_ad_cell_image_corner_radius">4dp</dimen>
+    <dimen name="listing_ad_cell_platform_tag_margin_left">-3dp</dimen>
+    <dimen name="listing_ad_cell_platform_tag_margin_bottom">5dp</dimen>
+    <dimen name="listing_ad_cell_platform_tag_corner_radius">2dp</dimen>
+    <dimen name="listing_ad_cell_platform_tag_border_width">2dp</dimen>
+    <dimen name="listing_ad_cell_title_margin_top">-2dp</dimen>
+
+    <dimen name="listing_distance_pill_image_size">24dp</dimen>
+    <dimen name="listing_distance_pill_radius">16dp</dimen>
+    <dimen name="listing_distance_pill_elevation">2dp</dimen>
+    <dimen name="listing_distance_pill_padding_horizontal">16dp</dimen>
+    <dimen name="listing_distance_pill_padding_vertical">4dp</dimen>
+    <dimen name="listing_distance_pill_distance_left_margin">4dp</dimen>
+</resources>

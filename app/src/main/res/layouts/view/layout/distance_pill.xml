@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/distance_pill_background"
+    android:elevation="@dimen/product_location_tag_elevation"
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:paddingBottom="@dimen/listing_distance_pill_padding_vertical"
+    android:paddingEnd="@dimen/listing_distance_pill_padding_horizontal"
+    android:paddingLeft="@dimen/listing_distance_pill_padding_horizontal"
+    android:paddingRight="@dimen/listing_distance_pill_padding_horizontal"
+    android:paddingStart="@dimen/listing_distance_pill_padding_horizontal"
+    android:paddingTop="@dimen/listing_distance_pill_padding_vertical">
+
+    <ImageView
+        android:layout_width="@dimen/listing_distance_pill_image_size"
+        android:layout_height="@dimen/listing_distance_pill_image_size"
+        android:src="@drawable/location_tag_icon"/>
+
+    <TextView
+        style="@style/Pill"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/listing_distance_pill_distance_left_margin"
+        android:layout_marginStart="@dimen/listing_distance_pill_distance_left_margin"
+        android:text="A 1km de ti"/>
+</LinearLayout>
